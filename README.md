@@ -2,7 +2,7 @@
 
 **12 ways AI agents fail in production. Each one runnable. Each one fixed.**
 
-This is the open-source companion repo for *The Agent Autopsy: 12 Production Disasters, Diagnosed* — a written lesson series for freeCodeCamp by Lawrence Jefferson II (Menoko OG), CEO/CTO of [classHuman AI](https://classhuman.org).
+This is the open-source companion repo for *The Agent Autopsy: 12 Production Disasters, Diagnosed* — a written lesson series  by Lawrence Jefferson II (Menoko OG), CEO/CTO of [classHuman AI](https://classhuman.org).
 
 Most agent courses teach you to build one. This one teaches you what breaks when you do.
 
@@ -88,7 +88,7 @@ MIT. Use it, fork it, teach from it. Attribution appreciated.
 
 ## The written lessons
 
-Full written walkthroughs of every failure — the diagnosis, the diff, and the production war story behind it — are being published as *The Agent Autopsy* series on freeCodeCamp. Link lands here when the first article ships.
+Full written walkthroughs of every failure — the diagnosis, the diff, and the production war story behind it — are being published as *The Agent Autopsy* series. Link lands here when the first article ships.
 
 ---
 
