@@ -1,6 +1,6 @@
 # Documentation
 
-> **This file is a placeholder.** Replace with the canonical [`DOCUMENTATION.md`](https://claude.ai/local_sessions/local_53f6fedf-1a43-46e2-890b-5dece115bf5c) from `~/development/claude-mds/standards/` before publishing.
+> **This file is a placeholder.** Replace with the canonical [`DOCUMENTATION.md`](https://claude.ai/local_sessions/local_53f6fedf-1a43-46e2-890b-5dece115bf5c) from `F:\classHuman\menoko-og-prompt-md-library\rune-library\references\` before publishing.
 
 ## Summary of the standard this repo follows
 
