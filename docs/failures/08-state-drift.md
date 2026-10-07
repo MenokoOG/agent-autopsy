@@ -13,11 +13,11 @@ A pipeline threads one shared state dictionary through several steps. One step s
 
 String-typed totals are one example. Swapped keys and stale fields behave the same way. State corrupts between steps, and by the time you see the damage you can't tell which step caused it.
 
-The code is in [`08-state-drift`](https://github.com/MenokoOG/agent-autopsy/tree/main/agent-autopsy/08-state-drift).
+The code is in [`08-state-drift`](https://github.com/MenokoOG/agent-autopsy/tree/main/08-state-drift).
 
 ## The bug
 
-From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/08-state-drift/broken.py):
+From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/08-state-drift/broken.py):
 
 ```python
 ORDER = {"items": [400, 800], "fee_api_response": "50"}
@@ -54,7 +54,7 @@ An agent pipeline is especially exposed to this because some steps take input fr
 
 ## The fix
 
-[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/08-state-drift/fixed.py) does two things.
+[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/08-state-drift/fixed.py) does two things.
 
 **It gives the state a contract and checks it after every step.**
 
@@ -96,7 +96,7 @@ The audit trail shows the state after each step. If some future step writes `fee
 
 ## The proof
 
-The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/08-state-drift/tests/test_fixed.py):
+The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/08-state-drift/tests/test_fixed.py):
 
 - `test_fixed_computes_correct_total` checks the answer is 1250.
 - `test_fixed_catches_corrupting_step_by_name` swaps in a step that writes a string and checks the error names it.

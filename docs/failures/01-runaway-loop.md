@@ -11,11 +11,11 @@ permalink: /failures/01-runaway-loop/
 
 You ship an agent that decides when it's finished. In testing it takes three passes and says DONE. In production an edge case shows up: the model keeps "improving" its draft and never says the word. Nothing outside the model is watching, so the loop keeps going until your rate limit or your wallet trips.
 
-The code for this lesson is in [`01-runaway-loop`](https://github.com/MenokoOG/agent-autopsy/tree/main/agent-autopsy/01-runaway-loop).
+The code for this lesson is in [`01-runaway-loop`](https://github.com/MenokoOG/agent-autopsy/tree/main/01-runaway-loop).
 
 ## The bug
 
-Here's the loop from [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/01-runaway-loop/broken.py):
+Here's the loop from [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/01-runaway-loop/broken.py):
 
 ```python
 while True:
@@ -50,7 +50,7 @@ The principle is old and applies to any loop: the thing being supervised can't b
 
 ## The fix
 
-[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/01-runaway-loop/fixed.py) adds three limits the model can't override:
+[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/01-runaway-loop/fixed.py) adds three limits the model can't override:
 
 ```python
 MAX_STEPS = 10          # hard iteration cap
@@ -102,7 +102,7 @@ With the mock, the step cap fires first. At 18 tokens per step, 4,000 would take
 
 ## The proof
 
-[`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/01-runaway-loop/tests/test_fixed.py) has five tests:
+[`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/01-runaway-loop/tests/test_fixed.py) has five tests:
 
 - `test_fixed_stops_at_max_steps` feeds a model that never says DONE and checks the result is `max_steps` after exactly 5 steps.
 - `test_fixed_stops_on_token_budget` sets a budget of 50 and checks the budget guard fires.

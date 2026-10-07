@@ -11,11 +11,11 @@ permalink: /failures/06-wrong-tool-pick/
 
 A user asks, "What is 12.5% of 3,847?" Your router sees a question that starts with "What is", classifies it as a lookup, and sends it to web search, the tool it reaches for on everything. Search returns a stale snippet that sounds sure of itself. The agent passes it along. The calculator, which would have nailed the answer in microseconds, never runs.
 
-The code is in [`06-wrong-tool-pick`](https://github.com/MenokoOG/agent-autopsy/tree/main/agent-autopsy/06-wrong-tool-pick).
+The code is in [`06-wrong-tool-pick`](https://github.com/MenokoOG/agent-autopsy/tree/main/06-wrong-tool-pick).
 
 ## The bug
 
-From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/06-wrong-tool-pick/broken.py):
+From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/06-wrong-tool-pick/broken.py):
 
 ```python
 def route(task):
@@ -52,7 +52,7 @@ Routers drift toward the tool with the broadest coverage. Broad tools win ties, 
 
 ## The fix
 
-[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/06-wrong-tool-pick/fixed.py) routes on what the task needs and tries a deterministic classifier first:
+[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/06-wrong-tool-pick/fixed.py) routes on what the task needs and tries a deterministic classifier first:
 
 ```python
 def extract_math(task):
@@ -89,7 +89,7 @@ The proof of the right result is the number: 480.875, which matches the broken s
 
 ## The proof
 
-The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/06-wrong-tool-pick/tests/test_fixed.py):
+The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/06-wrong-tool-pick/tests/test_fixed.py):
 
 - `test_fixed_routes_math_to_calculator` checks the percentage question reaches the calculator.
 - `test_fixed_routes_plain_arithmetic` checks a plain expression does too.

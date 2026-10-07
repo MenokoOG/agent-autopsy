@@ -13,11 +13,11 @@ An internal service has a bad moment: HTTP 500, a timeout, an empty body. Your a
 
 Nobody finds out until someone makes a decision from the numbers.
 
-The code is in [`05-silent-tool-failure`](https://github.com/MenokoOG/agent-autopsy/tree/main/agent-autopsy/05-silent-tool-failure).
+The code is in [`05-silent-tool-failure`](https://github.com/MenokoOG/agent-autopsy/tree/main/05-silent-tool-failure).
 
 ## The bug
 
-From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/05-silent-tool-failure/broken.py):
+From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/05-silent-tool-failure/broken.py):
 
 ```python
 def fetch_url(url):
@@ -53,7 +53,7 @@ The second is the context window itself. Anything you put in the prompt becomes 
 
 ## The fix
 
-[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/05-silent-tool-failure/fixed.py) puts a check at the boundary where tool results enter the system:
+[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/05-silent-tool-failure/fixed.py) puts a check at the boundary where tool results enter the system:
 
 ```python
 class ToolFailure(Exception):
@@ -95,7 +95,7 @@ The key design choice is where the check lives. It sits at the tool boundary, be
 
 ## The proof
 
-The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/05-silent-tool-failure/tests/test_fixed.py):
+The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/05-silent-tool-failure/tests/test_fixed.py):
 
 - `test_fixed_surfaces_tool_failure` checks a 500 produces `ok: False` and an error naming the status.
 - `test_fixed_checked_fetch_raises` tests the wrapper on its own.

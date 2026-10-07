@@ -11,11 +11,11 @@ permalink: /failures/12-no-human-brake/
 
 Every action the agent decides on, it runs. Archiving a report and deleting a customer table take the same code path. Nothing classifies which actions can be undone, there's no checkpoint before the point of no return, and no human sits anywhere in the loop. The plan looked reasonable. Plans usually do.
 
-The code is in [`12-no-human-brake`](https://github.com/MenokoOG/agent-autopsy/tree/main/agent-autopsy/12-no-human-brake).
+The code is in [`12-no-human-brake`](https://github.com/MenokoOG/agent-autopsy/tree/main/12-no-human-brake).
 
 ## The bug
 
-From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/12-no-human-brake/broken.py):
+From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/12-no-human-brake/broken.py):
 
 ```python
 def delete_customer_records(db, reason):
@@ -50,7 +50,7 @@ There's also a trust problem. The more often an agent is right, the less anyone 
 
 ## The fix
 
-[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/12-no-human-brake/fixed.py) adds two ideas.
+[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/12-no-human-brake/fixed.py) adds two ideas.
 
 **Declare irreversibility.**
 
@@ -111,7 +111,7 @@ The demo's `approve=lambda req: True` is a stub for a real review step. In produ
 
 ## The proof
 
-The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/12-no-human-brake/tests/test_fixed.py):
+The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/12-no-human-brake/tests/test_fixed.py):
 
 - `test_fixed_blocks_irreversible_without_approval` checks the table survives a run with no approver.
 - `test_fixed_still_runs_reversible_actions` checks the brake doesn't stop safe work.

@@ -21,7 +21,7 @@ Every `broken.py` and `fixed.py` ships with a mock model. The mock reproduces th
 
 ```bash
 git clone https://github.com/MenokoOG/agent-autopsy.git
-cd agent-autopsy/agent-autopsy
+cd agent-autopsy
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 python -m pytest -q
