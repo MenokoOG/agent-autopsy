@@ -52,7 +52,7 @@ def run_batch(users, outbox, checkpoint=CHECKPOINT, crash_at=None):
 if __name__ == "__main__":
     if CHECKPOINT.exists():
         CHECKPOINT.unlink()
-    outbox = []
+    outbox: list[str] = []
     print("first run (crashes at item 3):")
     try:
         run_batch(USERS, outbox, crash_at=3)
