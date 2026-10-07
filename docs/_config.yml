@@ -1,0 +1,12 @@
+title: The Agent Autopsy
+description: 12 ways AI agents fail in production, diagnosed with runnable code and tested fixes.
+author: Lawrence Jefferson II (Menoko OG)
+url: https://menokoog.github.io
+baseurl: /agent-autopsy
+theme: jekyll-theme-minimal
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+show_downloads: false
+repository: MenokoOG/agent-autopsy
