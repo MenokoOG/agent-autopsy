@@ -13,11 +13,11 @@ A long-running agent fills its context window. To make room, your code keeps "th
 
 The agent keeps working, diligently, on whatever the recent messages talk about. Those messages mention the auth service's noisy logs. A billing migration turns into an auth refactor, and the one instruction that forbade it is gone.
 
-The code is in [`07-context-collapse`](https://github.com/MenokoOG/agent-autopsy/tree/main/agent-autopsy/07-context-collapse).
+The code is in [`07-context-collapse`](https://github.com/MenokoOG/agent-autopsy/tree/main/07-context-collapse).
 
 ## The bug
 
-From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/07-context-collapse/broken.py):
+From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/07-context-collapse/broken.py):
 
 ```python
 GOAL = ("GOAL: Migrate the billing database from MySQL to Postgres. "
@@ -47,7 +47,7 @@ The model has no memory outside the prompt. If the goal isn't in the context, th
 
 ## The fix
 
-[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/07-context-collapse/fixed.py) pins the goal and trims the middle:
+[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/07-context-collapse/fixed.py) pins the goal and trims the middle:
 
 ```python
 def build_context(history, keep_last=KEEP_LAST):
@@ -74,7 +74,7 @@ Look at the marker line, because it contains a claim: "no decisions were made in
 
 ## The proof
 
-The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/07-context-collapse/tests/test_fixed.py):
+The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/07-context-collapse/tests/test_fixed.py):
 
 - `test_fixed_pins_goal_after_heavy_trimming` checks the goal survives a long history.
 - `test_fixed_context_stays_bounded` checks the window doesn't grow with the history.

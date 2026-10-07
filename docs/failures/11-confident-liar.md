@@ -13,11 +13,11 @@ You ask the agent for a company's third-quarter revenue. The company is private,
 
 The user can't tell grounded from invented. That's the worst part of this failure: the lie looks exactly like the truth.
 
-The code is in [`11-confident-liar`](https://github.com/MenokoOG/agent-autopsy/tree/main/agent-autopsy/11-confident-liar).
+The code is in [`11-confident-liar`](https://github.com/MenokoOG/agent-autopsy/tree/main/11-confident-liar).
 
 ## The bug
 
-From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/11-confident-liar/broken.py):
+From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/11-confident-liar/broken.py):
 
 ```python
 def search(query):
@@ -49,7 +49,7 @@ You can ask nicely in the prompt: "only answer from the search results." That he
 
 ## The fix
 
-[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/11-confident-liar/fixed.py) enforces grounding in code, with two gates.
+[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/11-confident-liar/fixed.py) enforces grounding in code, with two gates.
 
 **Gate 1: no evidence, no factual answer.**
 
@@ -88,7 +88,7 @@ The result carries a `grounded` flag, so the caller can tell a verified answer f
 
 ## The proof
 
-The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/11-confident-liar/tests/test_fixed.py):
+The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/11-confident-liar/tests/test_fixed.py):
 
 - `test_fixed_refuses_without_evidence` checks gate 1.
 - `test_fixed_rejects_uncited_specifics_even_with_evidence` checks gate 2 catches a model that has evidence and still ignores it.

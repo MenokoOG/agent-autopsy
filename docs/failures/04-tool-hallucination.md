@@ -13,11 +13,11 @@ Your agent has two tools: a calculator and a web search. The user asks, "How man
 
 The worse version is a router that fuzzy-matches names. It sees `database_query`, finds something close, and runs the wrong real tool with arguments meant for a different one.
 
-The code is in [`04-tool-hallucination`](https://github.com/MenokoOG/agent-autopsy/tree/main/agent-autopsy/04-tool-hallucination).
+The code is in [`04-tool-hallucination`](https://github.com/MenokoOG/agent-autopsy/tree/main/04-tool-hallucination).
 
 ## The bug
 
-From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/04-tool-hallucination/broken.py):
+From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/04-tool-hallucination/broken.py):
 
 ```python
 TOOLS = {"calculator": calculator, "web_search": web_search}
@@ -52,7 +52,7 @@ Crashing is the good outcome. A crash is loud. The quiet outcomes are worse: a f
 
 ## The fix
 
-[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/04-tool-hallucination/fixed.py) validates every request against the registry and gives the model a chance to correct itself, with a limit:
+[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/04-tool-hallucination/fixed.py) validates every request against the registry and gives the model a chance to correct itself, with a limit:
 
 ```python
 MAX_TOOL_RETRIES = 3
@@ -94,7 +94,7 @@ Three properties make this a good fix:
 
 ## The proof
 
-The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/04-tool-hallucination/tests/test_fixed.py):
+The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/04-tool-hallucination/tests/test_fixed.py):
 
 - `test_fixed_corrects_hallucinated_tool` checks the agent recovers after one correction.
 - `test_fixed_fails_loud_when_model_never_recovers` uses a model that keeps inventing tools and checks the `RuntimeError` after the retry limit.

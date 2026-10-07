@@ -10,3 +10,6 @@ kramdown:
   syntax_highlighter: rouge
 show_downloads: false
 repository: MenokoOG/agent-autopsy
+exclude:
+  - STRUCTURE.md
+  - adr

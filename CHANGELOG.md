@@ -13,6 +13,7 @@ Every PR includes its CHANGELOG entry in the diff.
 - Written lesson series for all 12 failures, published with GitHub Pages from `docs/`
 
 ### Changed
+- Flattened the repo: the project now lives at the repository root instead of a nested `agent-autopsy/` folder
 - Removed brand references from the README, folder READMEs and LICENSE
 - Folder READMEs link to the matching article on the Pages site
 
