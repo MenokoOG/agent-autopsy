@@ -31,4 +31,4 @@ Match the completion signal with a tolerant pattern, and treat two identical rep
 
 ## Read the lesson
 
-Full written walkthrough: *The Agent Autopsy* series on the project site (coming soon).
+Full written walkthrough: [Failure 2 in *The Agent Autopsy* series](https://menokoog.github.io/agent-autopsy/failures/02-stuck-agent/).

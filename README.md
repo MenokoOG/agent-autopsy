@@ -2,7 +2,7 @@
 
 **12 ways AI agents fail in production. Each one runnable. Each one fixed.**
 
-This is the open-source companion repo for *The Agent Autopsy: 12 Production Disasters, Diagnosed* — a written lesson series  by Lawrence Jefferson II (Menoko OG), CEO/CTO of [M3n0ko0g](https://github.com/MenokoOG).
+This is the open-source companion repo for *The Agent Autopsy: 12 Production Disasters, Diagnosed* — a written lesson series by Lawrence Jefferson II (Menoko OG).
 
 Most agent courses teach you to build one. This one teaches you what breaks when you do.
 
@@ -88,8 +88,8 @@ MIT. Use it, fork it, teach from it. Attribution appreciated.
 
 ## The written lessons
 
-Full written walkthroughs of every failure — the diagnosis, the diff, and the production war story behind it — are being published as *The Agent Autopsy* series. Link lands here when the first article ships.
+Full written walkthroughs of every failure, with the diagnosis and the diff, are published as [*The Agent Autopsy* series](https://menokoog.github.io/agent-autopsy/).
 
 ---
 
-*Built by [M3n0ko0g](https://github.com/MenokoOG) — driven by LAHA: Love All Humans Always.*
+*Built by Lawrence Jefferson II (Menoko OG), driven by LAHA: Love All Humans Always.*

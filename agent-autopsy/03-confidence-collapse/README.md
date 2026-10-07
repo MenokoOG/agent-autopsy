@@ -31,4 +31,4 @@ Give verification a hard budget (one re-check, one revision) and a commit rule, 
 
 ## Read the lesson
 
-Full written walkthrough: *The Agent Autopsy* series on the project site (coming soon).
+Full written walkthrough: [Failure 3 in *The Agent Autopsy* series](https://menokoog.github.io/agent-autopsy/failures/03-confidence-collapse/).

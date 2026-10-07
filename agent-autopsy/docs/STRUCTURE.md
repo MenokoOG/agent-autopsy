@@ -24,7 +24,7 @@ Each folder README has these sections, in order:
 5. **Files in this folder** — bullet list
 6. **Try it yourself** — copy-paste commands
 7. **The fix in one sentence** — the takeaway
-8. **Watch the lesson** — link to the course
+8. **Watch the lesson** — link to the article
 
 ## Code style
 

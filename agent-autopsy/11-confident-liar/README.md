@@ -31,4 +31,4 @@ Gate the answer on evidence existing, require every specific claim to cite an ev
 
 ## Read the lesson
 
-Full written walkthrough: *The Agent Autopsy* series on the project site (coming soon).
+Full written walkthrough: [Failure 11 in *The Agent Autopsy* series](https://menokoog.github.io/agent-autopsy/failures/11-confident-liar/).

@@ -31,4 +31,4 @@ Build context as `[pinned goal] + [summary of the trimmed middle] + [recent mess
 
 ## Read the lesson
 
-Full written walkthrough: *The Agent Autopsy* series on the project site (coming soon).
+Full written walkthrough: [Failure 7 in *The Agent Autopsy* series](https://menokoog.github.io/agent-autopsy/failures/07-context-collapse/).
