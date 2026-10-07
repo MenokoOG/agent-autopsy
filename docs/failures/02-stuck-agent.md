@@ -11,11 +11,11 @@ permalink: /failures/02-stuck-agent/
 
 Your agent has a step cap, so you already learned [the first lesson]({{ '/failures/01-runaway-loop/' | relative_url }}). It answers the question correctly and says it's finished. But your done-check looks for the exact string `TASK_COMPLETE`, and the model wrote "The task is complete." The agent decides it isn't done, asks the model to keep going, and does that until the cap runs out. Then it returns nothing. The right answer sat in the log the whole time.
 
-The code is in [`02-stuck-agent`](https://github.com/MenokoOG/agent-autopsy/tree/main/agent-autopsy/02-stuck-agent).
+The code is in [`02-stuck-agent`](https://github.com/MenokoOG/agent-autopsy/tree/main/02-stuck-agent).
 
 ## The bug
 
-From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/02-stuck-agent/broken.py):
+From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/02-stuck-agent/broken.py):
 
 ```python
 TASK = "What is the capital of France? Reply TASK_COMPLETE when done."
@@ -54,7 +54,7 @@ Developers write the completion check once, test it against their own prompt, an
 
 ## The fix
 
-[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/02-stuck-agent/fixed.py) makes two changes.
+[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/02-stuck-agent/fixed.py) makes two changes.
 
 **Part 1: parse the signal tolerantly.**
 
@@ -86,7 +86,7 @@ answer='The task is complete. The capital of France is Paris.'
 
 ## The proof
 
-The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/02-stuck-agent/tests/test_fixed.py):
+The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/02-stuck-agent/tests/test_fixed.py):
 
 - `test_fixed_recognizes_natural_language_completion` checks the exact failure from the scenario now ends on the first step.
 - `test_fixed_stall_detector_catches_repeats` uses a model that never signals completion but repeats itself, and checks the stall detector ends the run.
