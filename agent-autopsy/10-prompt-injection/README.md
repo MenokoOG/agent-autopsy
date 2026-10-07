@@ -31,4 +31,4 @@ Wrap tool output in labeled untrusted-data fences, never co-locate secrets with 
 
 ## Read the lesson
 
-Full written walkthrough: *The Agent Autopsy* series on freeCodeCamp (coming soon).
+Full written walkthrough: [Failure 10 in *The Agent Autopsy* series](https://menokoog.github.io/agent-autopsy/failures/10-prompt-injection/).

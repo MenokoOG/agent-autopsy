@@ -31,4 +31,4 @@ Wrap every tool call in a checked boundary that turns error statuses into except
 
 ## Read the lesson
 
-Full written walkthrough: *The Agent Autopsy* series on freeCodeCamp (coming soon).
+Full written walkthrough: [Failure 5 in *The Agent Autopsy* series](https://menokoog.github.io/agent-autopsy/failures/05-silent-tool-failure/).

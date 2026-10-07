@@ -31,4 +31,4 @@ Declare which actions are irreversible, route them through an approval gate that
 
 ## Read the lesson
 
-Full written walkthrough: *The Agent Autopsy* series on freeCodeCamp (coming soon).
+Full written walkthrough: [Failure 12 in *The Agent Autopsy* series](https://menokoog.github.io/agent-autopsy/failures/12-no-human-brake/).

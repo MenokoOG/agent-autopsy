@@ -31,4 +31,4 @@ Write each completed item to a durable checkpoint before moving on, and consult 
 
 ## Read the lesson
 
-Full written walkthrough: *The Agent Autopsy* series on freeCodeCamp (coming soon).
+Full written walkthrough: [Failure 9 in *The Agent Autopsy* series](https://menokoog.github.io/agent-autopsy/failures/09-amnesia-bug/).
