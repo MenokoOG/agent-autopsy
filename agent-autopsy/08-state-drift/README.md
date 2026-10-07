@@ -31,4 +31,4 @@ Define a typed schema for pipeline state, validate after every step, hand each s
 
 ## Read the lesson
 
-Full written walkthrough: *The Agent Autopsy* series on the project site (coming soon).
+Full written walkthrough: [Failure 8 in *The Agent Autopsy* series](https://menokoog.github.io/agent-autopsy/failures/08-state-drift/).

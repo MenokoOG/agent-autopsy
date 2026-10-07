@@ -31,4 +31,4 @@ Check `name in tools` before dispatch, feed the real tool list back to the model
 
 ## Read the lesson
 
-Full written walkthrough: *The Agent Autopsy* series on the project site (coming soon).
+Full written walkthrough: [Failure 4 in *The Agent Autopsy* series](https://menokoog.github.io/agent-autopsy/failures/04-tool-hallucination/).

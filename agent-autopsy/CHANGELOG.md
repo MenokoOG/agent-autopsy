@@ -5,13 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-Per M3n0ko0g Engineering Standards, every PR must include its CHANGELOG entry in the diff.
+Every PR includes its CHANGELOG entry in the diff.
 
 ## [Unreleased]
 
-### Planned
-- Written lesson articles for the the project site series (starting with Failure #1)
-- Replace `VERSIONING.md` and `DOCUMENTATION.md` placeholders with canonical M3n0ko0g standards files
+### Added
+- Written lesson series for all 12 failures, published with GitHub Pages from `docs/`
+
+### Changed
+- Removed brand references from the README, folder READMEs and LICENSE
+- Folder READMEs link to the matching article on the Pages site
 
 ## [0.2.0] - 2026-07-19
 
@@ -22,9 +25,9 @@ Per M3n0ko0g Engineering Standards, every PR must include its CHANGELOG entry in
 - `pytest.ini` (importlib import mode) so the whole suite runs from the repo root
 
 ### Changed
-- Branding: OKO Forge / COIL references updated to M3n0ko0g (LAHA)
-- Course platform: Udemy references replaced with the the project site written lesson series
-- LICENSE copyright holder updated to Lawrence Jefferson II — M3n0ko0g
+- Branding references updated (LAHA)
+- Course platform: Udemy references replaced with a written lesson series
+- LICENSE copyright holder updated to Lawrence Jefferson II
 
 ## [0.1.0] - 2026-05-07
 
@@ -34,6 +37,6 @@ Per M3n0ko0g Engineering Standards, every PR must include its CHANGELOG entry in
 - Folder structure for all 12 failures, each with `tests/`
 - Failure #1 README as the working template
 - `docs/STRUCTURE.md` describing the per-folder pattern
-- `docs/adr/0001-record-architecture-decisions.md` per COIL standards
-- `VERSIONING.md` and `DOCUMENTATION.md` placeholders pointing to canonical COIL standards
-- LICENSE (MIT, OKO Forge LLC), `.env.example`, `.gitignore`, `requirements.txt`, `VERSION`
+- `docs/adr/0001-record-architecture-decisions.md` 
+- `VERSIONING.md` and `DOCUMENTATION.md` placeholders
+- LICENSE (MIT), `.env.example`, `.gitignore`, `requirements.txt`, `VERSION`

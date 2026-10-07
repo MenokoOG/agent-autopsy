@@ -34,4 +34,4 @@ Wrap every agent loop in a `for _ in range(MAX_STEPS)` with a token budget check
 
 ## Read the lesson
 
-Full written walkthrough: *The Agent Autopsy* series on the project site (coming soon).
+Full written walkthrough: [Failure 1 in *The Agent Autopsy* series](https://menokoog.github.io/agent-autopsy/failures/01-runaway-loop/).
