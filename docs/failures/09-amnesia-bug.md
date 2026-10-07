@@ -13,11 +13,11 @@ Your agent works through a queue of side effects: emails, charges, API calls. A 
 
 A duplicate welcome email is embarrassing. A duplicate charge is a refund ticket and a hit to trust.
 
-The code is in [`09-amnesia-bug`](https://github.com/MenokoOG/agent-autopsy/tree/main/agent-autopsy/09-amnesia-bug).
+The code is in [`09-amnesia-bug`](https://github.com/MenokoOG/agent-autopsy/tree/main/09-amnesia-bug).
 
 ## The bug
 
-From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/09-amnesia-bug/broken.py):
+From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/09-amnesia-bug/broken.py):
 
 ```python
 def run_batch(users, outbox, crash_at=None):
@@ -54,7 +54,7 @@ Retrying is the right instinct, and a scheduler that restarts failed jobs is doi
 
 ## The fix
 
-[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/09-amnesia-bug/fixed.py) keeps a durable checkpoint, one line per finished item:
+[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/09-amnesia-bug/fixed.py) keeps a durable checkpoint, one line per finished item:
 
 ```python
 CHECKPOINT = Path("checkpoint.jsonl")
@@ -98,7 +98,7 @@ The format matters too. JSON Lines, one object per line, is append-only. A crash
 
 ## The proof
 
-The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/09-amnesia-bug/tests/test_fixed.py):
+The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/09-amnesia-bug/tests/test_fixed.py):
 
 - `test_fixed_no_duplicate_side_effects_after_crash` crashes, retries, and checks no user appears twice in the outbox.
 - `test_fixed_completes_all_items` checks everyone is emailed exactly once overall.

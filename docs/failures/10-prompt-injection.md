@@ -11,11 +11,11 @@ permalink: /failures/10-prompt-injection/
 
 Your agent fetches a page, a document or an email. Anyone can write that content. It gets pasted into the prompt as-is, where the model can't tell your instructions from the attacker's. One buried sentence, "ignore all previous instructions," and the agent takes orders from a stranger while your credentials sit in its context.
 
-The code is in [`10-prompt-injection`](https://github.com/MenokoOG/agent-autopsy/tree/main/agent-autopsy/10-prompt-injection).
+The code is in [`10-prompt-injection`](https://github.com/MenokoOG/agent-autopsy/tree/main/10-prompt-injection).
 
 ## The bug
 
-From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/10-prompt-injection/broken.py):
+From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/10-prompt-injection/broken.py):
 
 ```python
 SECRET = "sk-prod-XXXX-do-not-leak"
@@ -56,7 +56,7 @@ SQL injection works the same way. Untrusted text got mixed into a command channe
 
 ## The fix
 
-[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/10-prompt-injection/fixed.py) uses three layers, and removes the secret from the prompt entirely.
+[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/10-prompt-injection/fixed.py) uses three layers, and removes the secret from the prompt entirely.
 
 **Layer 1: fence the untrusted content.**
 
@@ -99,7 +99,7 @@ The mock only obeys the injection when the page isn't fenced, so this run shows 
 
 ## The proof
 
-The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/10-prompt-injection/tests/test_fixed.py):
+The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/10-prompt-injection/tests/test_fixed.py):
 
 - `test_fixed_does_not_leak_secret` checks the secret never appears in the answer.
 - `test_fixed_fences_tool_output` checks the page is wrapped.

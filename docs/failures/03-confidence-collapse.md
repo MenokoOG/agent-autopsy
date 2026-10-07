@@ -11,11 +11,11 @@ permalink: /failures/03-confidence-collapse/
 
 Someone adds a "double-check your answer" step for quality. It helps, so someone else turns it into a loop: every answer gets a follow-up asking "are you absolutely sure?" Models respond to repeated challenge by hedging, and eventually by changing their answer. The agent oscillates between two answers until the step cap trips. You pay for twenty calls where one would do, and the answer you ship depends on whether the cap landed on an odd or an even turn.
 
-The code is in [`03-confidence-collapse`](https://github.com/MenokoOG/agent-autopsy/tree/main/agent-autopsy/03-confidence-collapse).
+The code is in [`03-confidence-collapse`](https://github.com/MenokoOG/agent-autopsy/tree/main/03-confidence-collapse).
 
 ## The bug
 
-From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/03-confidence-collapse/broken.py):
+From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/03-confidence-collapse/broken.py):
 
 ```python
 for step in range(1, max_steps + 1):
@@ -49,7 +49,7 @@ Verification feels free and obviously good, so nobody budgets it. But a re-check
 
 ## The fix
 
-[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/03-confidence-collapse/fixed.py) gives verification a budget of one re-check and a commit rule:
+[`fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/03-confidence-collapse/fixed.py) gives verification a budget of one re-check and a commit rule:
 
 ```python
 first = model(messages)
@@ -104,7 +104,7 @@ If correctness matters, the revision step needs better inputs than "pick one." T
 
 ## The proof
 
-The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/agent-autopsy/03-confidence-collapse/tests/test_fixed.py):
+The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/03-confidence-collapse/tests/test_fixed.py):
 
 - `test_fixed_commits_when_verify_agrees` checks a stable model ends after 2 calls with no revision.
 - `test_fixed_caps_revisions_at_one` checks a flip-flopping model can't push past 3 calls.
