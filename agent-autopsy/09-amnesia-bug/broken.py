@@ -31,7 +31,7 @@ def run_batch(users, outbox, crash_at=None):
 
 
 if __name__ == "__main__":
-    outbox = []
+    outbox: list[str] = []
     print("first run (crashes at item 3):")
     try:
         run_batch(USERS, outbox, crash_at=3)
