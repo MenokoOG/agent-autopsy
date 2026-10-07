@@ -31,4 +31,4 @@ Classify the task's need first — computable expression → calculator, externa
 
 ## Read the lesson
 
-Full written walkthrough: *The Agent Autopsy* series on freeCodeCamp (coming soon).
+Full written walkthrough: [Failure 6 in *The Agent Autopsy* series](https://menokoog.github.io/agent-autopsy/failures/06-wrong-tool-pick/).
