@@ -28,6 +28,7 @@ while True:
     if "DONE" in reply:  # the model never says it
         return reply
 ```
+{: data-hl="1,8"}
 
 Look at what can end this loop. One thing: the string `DONE` appearing in the model's reply. The code counts tokens, and it prints them, but nothing reads that number to make a decision. The counter is a speedometer on a car with no brakes.
 

@@ -1,0 +1,91 @@
+---
+layout: default
+---
+{%- assign fails = site.data.failures -%}
+{%- assign total = fails | size -%}
+<section class="hero">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="floor" aria-hidden="true"><div class="floor-grid"></div></div>
+  <div class="horizon" aria-hidden="true"></div>
+  <div class="wrap hero-row">
+    <div class="hero-copy rise">
+      <div class="eyebrow">// CASE FILES 01–{{ total }} · RUNNABLE · TESTED</div>
+      <h1 class="hero-h1 glitch"><span>THE AGENT<br>AUTOPSY</span><span class="g g1" aria-hidden="true">THE AGENT<br>AUTOPSY</span><span class="g g2" aria-hidden="true">THE AGENT<br>AUTOPSY</span></h1>
+      <p class="hero-lead">{{ total }} ways AI agents fail in production. Each one runnable. Each one fixed.</p>
+      <p class="hero-sub">Most agent tutorials show you how to build one. This series shows you what breaks after you do.</p>
+      <div class="btn-row">
+        <a class="btn" href="{{ '/start-here/' | relative_url }}">START HERE →</a>
+        <a class="btn btn-ghost" href="{{ '/field-checklist/' | relative_url }}">FIELD CHECKLIST</a>
+      </div>
+      <div class="stats">
+        <span><b>{{ site.data.site.tests }}</b> tests</span>
+        <span><b>{{ total }}</b> folders</span>
+        <span><b>0</b> API keys required</span>
+        <span>By Lawrence Jefferson II (Menoko OG)</span>
+      </div>
+    </div>
+    <div class="hero-term rise" style="animation-delay:120ms">
+      {% include terminal-demo.html %}
+    </div>
+  </div>
+</section>
+
+<section class="wrap index" id="failures">
+  <div class="index-head">
+    <div>
+      <div class="eyebrow">// INDEX</div>
+      <h2 class="index-h2">The {{ total }} failures</h2>
+    </div>
+    <div class="filters" role="group" aria-label="Filter by category">
+      <button type="button" class="pill on" data-filter="ALL" aria-pressed="true">ALL</button>
+      {%- for c in site.data.categories -%}
+      <button type="button" class="pill" data-filter="{{ c.key }}" aria-pressed="false">{{ c.key }}</button>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="cat-rows">
+    {%- for c in site.data.categories -%}
+    {%- assign items = fails | where: "cat", c.key -%}
+    {%- assign n = items | size -%}
+    {%- assign parity = forloop.index0 | modulo: 2 -%}
+    <div class="cat-row tone-{{ c.tone }}{% if parity == 1 %} flip{% endif %}" data-cat="{{ c.key }}">
+      <div class="cat-tile">
+        <div class="cat-code">{{ c.code }}</div>
+        <div>
+          <div class="cat-label">CATEGORY</div>
+          <div class="cat-name">{{ c.name }}</div>
+        </div>
+      </div>
+      <div class="cards{% if n <= 3 %} few{% endif %}">
+        {%- assign wide = forloop.index0 | modulo: 3 -%}
+        {%- for f in items -%}
+        <a class="fcard{% if n <= 3 and forloop.index0 == wide %} wide{% endif %}" href="{{ '/failures/' | append: f.slug | append: '/' | relative_url }}" style="animation-delay:{{ forloop.index0 | times: 80 }}ms">
+          <span class="fcard-num">FAILURE {{ f.num }}</span>
+          <span class="fcard-path">/{{ f.slug }}</span>
+          <span class="fcard-title">{{ f.title }}</span>
+          <span class="fcard-short">{{ f.short | slice: 0 | upcase }}{{ f.short | slice: 1, 200 }}</span>
+          <span class="tags"><span class="tag t-bug">broken.py</span><span class="tag t-fix">fixed.py</span><span class="tag t-test">tests</span></span>
+        </a>
+        {%- endfor -%}
+      </div>
+    </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="wrap picks-wrap">
+  <div class="picks">
+    <div class="picks-copy">
+      <div class="eyebrow gold">// SHORT ON TIME</div>
+      <div class="picks-text">If you only have time for three, read 1, 5 and 10. Then finish with the field checklist.</div>
+    </div>
+    <div class="picks-btns">
+      {%- for f in fails -%}
+      {%- if f.num == "01" or f.num == "05" or f.num == "10" -%}
+      <a class="pick" href="{{ '/failures/' | append: f.slug | append: '/' | relative_url }}"><span class="pick-n">{{ f.num | plus: 0 }}</span><span>{{ f.title }}</span></a>
+      {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

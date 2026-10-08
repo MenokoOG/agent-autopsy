@@ -1,0 +1,3 @@
+# Keep these in step with the repo. Run `python -m pytest -q` for the test count.
+tests: 87
+repo: https://github.com/MenokoOG/agent-autopsy
