@@ -27,7 +27,7 @@ pip install -r requirements.txt
 python -m pytest -q
 ```
 
-On the repo's current state, that runs 63 tests across the 13 folders. They all pass.
+On the repo's current state, that runs 69 tests across the 14 folders. They all pass.
 
 Then pick a failure and run both versions:
 
