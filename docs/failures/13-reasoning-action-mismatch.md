@@ -123,4 +123,4 @@ An agent's explanation is a claim, so make it structured and check it against th
 
 ---
 
-[&larr; Previous: Failure 12]({{ '/failures/12-no-human-brake/' | relative_url }}) · [Next: The field checklist &rarr;]({{ '/field-checklist/' | relative_url }}) · [All failures]({{ '/' | relative_url }})
+[&larr; Previous: Failure 12]({{ '/failures/12-no-human-brake/' | relative_url }}) · [Next: Failure 14 &rarr;]({{ '/failures/14-rubber-stamp-verifier/' | relative_url }}) · [All failures]({{ '/' | relative_url }})
