@@ -6,15 +6,43 @@ three attempts, logged, and failing loud instead of crashing blind.
 
 Run: python fixed.py   (mock model unless ANTHROPIC_API_KEY is set)
 """
+import ast
 import json
+import operator
 import os
 
 TASK = "How many active users do we have?"
 MAX_TOOL_RETRIES = 3
 
 
+_OPERATORS = {
+    ast.Add: operator.add,
+    ast.Sub: operator.sub,
+    ast.Mult: operator.mul,
+    ast.Div: operator.truediv,
+    ast.Mod: operator.mod,
+}
+_UNARY = {ast.USub: operator.neg, ast.UAdd: operator.pos}
+MAX_EXPRESSION_CHARS = 200
+
+
+def _evaluate(node):
+    """Walk a parsed expression. Only numbers and + - * / % are allowed."""
+    if isinstance(node, ast.Expression):
+        return _evaluate(node.body)
+    if isinstance(node, ast.Constant) and type(node.value) in (int, float):
+        return node.value
+    if isinstance(node, ast.BinOp) and type(node.op) in _OPERATORS:
+        return _OPERATORS[type(node.op)](_evaluate(node.left), _evaluate(node.right))
+    if isinstance(node, ast.UnaryOp) and type(node.op) in _UNARY:
+        return _UNARY[type(node.op)](_evaluate(node.operand))
+    raise ValueError(f"unsupported expression element: {type(node).__name__}")
+
+
 def calculator(expression):
-    return str(eval(expression, {"__builtins__": {}}, {}))
+    if len(expression) > MAX_EXPRESSION_CHARS:
+        raise ValueError("expression too long")
+    return str(_evaluate(ast.parse(expression, mode="eval")))
 
 
 def web_search(query):
