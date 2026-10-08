@@ -5,7 +5,7 @@ layout: default
 
 # The Agent Autopsy
 
-**12 ways AI agents fail in production. Each one runnable. Each one fixed.**
+**13 ways AI agents fail in production. Each one runnable. Each one fixed.**
 
 By Lawrence Jefferson II (Menoko OG). The code lives in the [agent-autopsy repo](https://github.com/MenokoOG/agent-autopsy). Every article walks through one folder: the broken agent, the fix, and the test that proves the fix holds.
 
@@ -34,7 +34,8 @@ New here? Read [Start here]({{ '/start-here/' | relative_url }}) first. It takes
 10. [Prompt injection via tool output]({{ '/failures/10-prompt-injection/' | relative_url }}): a web page gives the agent orders.
 11. [The confident liar]({{ '/failures/11-confident-liar/' | relative_url }}): no evidence, specific numbers anyway.
 12. [No human brake]({{ '/failures/12-no-human-brake/' | relative_url }}): an irreversible action runs unattended.
+13. [Reasoning-action mismatch]({{ '/failures/13-reasoning-action-mismatch/' | relative_url }}): the agent says A100 and pays out on A101.
 
 ## Wrap-up
 
-- [The field checklist]({{ '/field-checklist/' | relative_url }}): one page that turns all twelve lessons into review questions.
+- [The field checklist]({{ '/field-checklist/' | relative_url }}): one page that turns all thirteen lessons into review questions.
