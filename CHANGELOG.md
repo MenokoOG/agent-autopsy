@@ -9,7 +9,11 @@ Every PR includes its CHANGELOG entry in the diff.
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-10-07
+
 ### Added
+- Custom retro-futurist Jekyll theme for the Pages site: home page with a terminal demo, lesson pages with a table of contents and highlighted code, and a checklist that keeps progress in the browser
+- Site screenshot in the README
 - Failure 17, limit in the prompt: runnable `broken.py` and `fixed.py`, 6 tests and a written lesson
 - Failure 16, silent degradation: runnable `broken.py` and `fixed.py`, 6 tests and a written lesson
 - Failure 15, memory poisoning: runnable `broken.py` and `fixed.py`, 6 tests and a written lesson
