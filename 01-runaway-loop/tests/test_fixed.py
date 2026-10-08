@@ -1,4 +1,4 @@
-"""Failure #1 — tests. The fix holds; the broken version demonstrably doesn't."""
+"""Failure #1: tests. The fix holds; the broken version demonstrably doesn't."""
 import importlib.util
 from pathlib import Path
 

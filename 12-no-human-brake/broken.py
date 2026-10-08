@@ -1,7 +1,7 @@
-"""Failure #12 — No Human Brake (BROKEN).
+"""Failure #12: No Human Brake (BROKEN).
 
 The agent decides some records are "stale" and deletes them. No approval,
-no dry run, no undo. The plan looked reasonable — right up until the
+no dry run, no undo. The plan looked reasonable, right up until the
 customer table was empty.
 
 Run: python broken.py
@@ -27,7 +27,7 @@ ACTIONS = {"archive_report": archive_report,
 
 def run_agent(plan, db=DATABASE):
     # THE BUG: every action executes the moment the agent decides it.
-    # Reversible or irreversible, $5 or $5M — same code path, zero
+    # Reversible or irreversible, $5 or $5M, same code path, zero
     # checkpoints, no human anywhere in the loop.
     results = []
     for action, arg in plan:

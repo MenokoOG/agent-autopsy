@@ -1,7 +1,7 @@
-"""Failure #2 — The Stuck Agent (FIXED).
+"""Failure #2: The Stuck Agent (FIXED).
 
 Two changes: a completion signal parsed robustly instead of by exact
-equality, and a stall detector — if the agent repeats itself, it is done
+equality, and a stall detector, if the agent repeats itself, it is done
 whether it knows it or not.
 
 Run: python fixed.py   (mock model unless ANTHROPIC_API_KEY is set)
@@ -29,7 +29,7 @@ MODEL = real_model if os.environ.get("ANTHROPIC_API_KEY") else mock_model
 
 
 def is_complete(reply):
-    # THE FIX (part 1): parse the signal tolerantly — regex, not equality.
+    # THE FIX (part 1): parse the signal tolerantly, regex, not equality.
     # Catches TASK_COMPLETE, "Status: complete", "The task is complete." etc.
     return bool(re.search(r"(task|status)[\W_]*(is[\W_]*)?complete", reply, re.IGNORECASE))
 
@@ -46,7 +46,7 @@ def run_agent(task, model=MODEL, max_steps=MAX_STEPS):
             return {"answer": reply, "steps": step, "stopped_by": "signal"}
 
         # THE FIX (part 2): stall detection. Two identical replies in a row
-        # means no progress is being made — take the answer and stop.
+        # means no progress is being made, take the answer and stop.
         if reply == previous_reply:
             return {"answer": reply, "steps": step, "stopped_by": "stall"}
         previous_reply = reply

@@ -1,8 +1,8 @@
-"""Failure #9 — The Amnesia Bug (FIXED).
+"""Failure #9: The Amnesia Bug (FIXED).
 
 A durable checkpoint file records every completed item BEFORE the next one
 starts. On restart, the agent reads the checkpoint and skips finished work.
-Crash all you want — each side effect happens exactly once.
+Crash all you want, each side effect happens exactly once.
 
 Run: python fixed.py
 """
@@ -42,7 +42,7 @@ def run_batch(users, outbox, checkpoint=CHECKPOINT, crash_at=None):
     done = load_done(checkpoint)
     for index, user in enumerate(users):
         if user in done:
-            continue  # already completed on a previous run — skip
+            continue  # already completed on a previous run, skip
         if crash_at is not None and index == crash_at:
             raise TransientCrash(f"network blip at item {index}")
         send_welcome_email(user, outbox)

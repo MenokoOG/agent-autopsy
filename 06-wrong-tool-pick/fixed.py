@@ -1,7 +1,7 @@
-"""Failure #6 — Wrong Tool Pick (FIXED).
+"""Failure #6: Wrong Tool Pick (FIXED).
 
-Routing is a decision, not a default. Classify what the task NEEDS —
-exact computation vs. fresh external facts — and give the router an
+Routing is a decision, not a default. Classify what the task NEEDS,
+exact computation vs. fresh external facts, and give the router an
 explicit rule for each class. Deterministic first, model fallback second.
 
 Run: python fixed.py   (mock model unless ANTHROPIC_API_KEY is set)
@@ -77,7 +77,7 @@ def extract_math(task):
 
 
 def route(task):
-    # THE FIX: route on what the task needs. Arithmetic needs exactness —
+    # THE FIX: route on what the task needs. Arithmetic needs exactness,
     # that's the calculator, every time. Search is for facts that live
     # outside the prompt, not for math.
     expression = extract_math(task)

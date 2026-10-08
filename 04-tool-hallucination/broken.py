@@ -1,6 +1,6 @@
-"""Failure #4 — Tool Hallucination (BROKEN).
+"""Failure #4: Tool Hallucination (BROKEN).
 
-The model asks for a tool that doesn't exist — `database_query`, invented
+The model asks for a tool that doesn't exist, `database_query`, invented
 from thin air because it sounds plausible. The agent code trusts the request
 blindly and crashes with a KeyError at 2 a.m.
 

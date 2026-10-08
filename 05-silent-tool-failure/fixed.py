@@ -1,7 +1,7 @@
-"""Failure #5 — Silent Tool Failure (FIXED).
+"""Failure #5: Silent Tool Failure (FIXED).
 
 One rule: check the tool result before it touches the context window.
-A failed tool is a failed step — surface it, don't summarize it.
+A failed tool is a failed step, surface it, don't summarize it.
 
 Run: python fixed.py   (mock model unless ANTHROPIC_API_KEY is set)
 """

@@ -1,7 +1,7 @@
-"""Failure #8 — State Drift (BROKEN).
+"""Failure #8: State Drift (BROKEN).
 
 Every step mutates a shared state dict. Step 2 writes the total as a
-STRING (fresh from an API), step 3 "adds" the fees — and Python happily
+STRING (fresh from an API), step 3 "adds" the fees, and Python happily
 concatenates. The invoice says $120050. No crash. No error. Just money.
 
 Run: python broken.py

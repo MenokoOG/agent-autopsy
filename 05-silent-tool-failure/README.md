@@ -1,22 +1,22 @@
-# Failure #5 — Silent Tool Failure
+# Failure #5: Silent Tool Failure
 
 > The dashboard returned a 500. The agent summarized the error page and called it a sales report.
 
 ## What it looks like in production
 
-An internal service flakes — HTTP 500, timeout, empty body. The agent never checks the status. The error page goes into the context window as if it were data, the model dutifully summarizes garbage, and the user receives a confident answer built on nothing. Exit code 0. The dashboard says success. Nobody finds out until the numbers matter.
+An internal service flakes, HTTP 500, timeout, empty body. The agent never checks the status. The error page goes into the context window as if it were data, the model dutifully summarizes garbage, and the user receives a confident answer built on nothing. Exit code 0. The dashboard says success. Nobody finds out until the numbers matter.
 
 ## The lesson
 
 **Check every tool result at the boundary, before it touches the context window.**
 
-A failed tool is a failed step. Surface it — don't summarize it.
+A failed tool is a failed step. Surface it, don't summarize it.
 
 ## Files in this folder
 
-- `broken.py` — stuffs an HTTP 500 body into context and reports `ok=True`.
-- `fixed.py` — validates status at the tool boundary; failure becomes a loud, honest halt.
-- `tests/` — pytest cases that prove the fix holds.
+- `broken.py`: stuffs an HTTP 500 body into context and reports `ok=True`.
+- `fixed.py`: validates status at the tool boundary; failure becomes a loud, honest halt.
+- `tests/`: pytest cases that prove the fix holds.
 
 ## Try it yourself
 

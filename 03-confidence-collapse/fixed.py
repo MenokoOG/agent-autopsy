@@ -1,8 +1,8 @@
-"""Failure #3 — Confidence Collapse (FIXED).
+"""Failure #3: Confidence Collapse (FIXED).
 
 Verification gets a budget: exactly one re-check. If the re-check agrees,
 commit. If it disagrees, take one revision and commit that. Either way the
-agent stops asking and ships — with a decision log showing why.
+agent stops asking and ships, with a decision log showing why.
 
 Run: python fixed.py   (mock model unless ANTHROPIC_API_KEY is set)
 """
@@ -42,10 +42,10 @@ def run_agent(task, model=MODEL):
     log.append({"phase": "verify", "reply": check})
 
     if check.strip().lower() == first.strip().lower():
-        # Re-check agrees — commit the verified answer.
+        # Re-check agrees, commit the verified answer.
         return {"answer": first, "revisions": 0, "model_calls": 2, "log": log}
 
-    # Re-check disagrees — allow exactly ONE revision, then commit anyway.
+    # Re-check disagrees, allow exactly ONE revision, then commit anyway.
     # Endless re-litigating destroys answers more often than it repairs them.
     messages.append({"role": "assistant", "content": check})
     messages.append({"role": "user",

@@ -1,4 +1,4 @@
-"""Failure #8 — tests."""
+"""Failure #8: tests."""
 import importlib.util
 from pathlib import Path
 

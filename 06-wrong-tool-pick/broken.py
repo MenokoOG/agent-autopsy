@@ -1,7 +1,7 @@
-"""Failure #6 — Wrong Tool Pick (BROKEN).
+"""Failure #6: Wrong Tool Pick (BROKEN).
 
-The question is arithmetic. The agent reaches for web search — because
-search is the hammer it always reaches for — and returns a stale forum
+The question is arithmetic. The agent reaches for web search, because
+search is the hammer it always reaches for, and returns a stale forum
 answer instead of doing the math.
 
 Run: python broken.py   (mock model unless ANTHROPIC_API_KEY is set)

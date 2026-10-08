@@ -17,14 +17,14 @@ NN-failure-name/
 
 Each folder README has these sections, in order:
 
-1. **Title** — `# Failure #N — The [Name]`
-2. **Quote** — one-line gut-punch description
-3. **What it looks like in production** — 2–4 sentences, concrete scenario
-4. **The lesson** — bold one-liner, then 1–2 sentences expanding it
-5. **Files in this folder** — bullet list
-6. **Try it yourself** — copy-paste commands
-7. **The fix in one sentence** — the takeaway
-8. **Watch the lesson** — link to the article
+1. **Title**: `# Failure #N, The [Name]`
+2. **Quote**: one-line gut-punch description
+3. **What it looks like in production**: 2–4 sentences, concrete scenario
+4. **The lesson**: bold one-liner, then 1–2 sentences expanding it
+5. **Files in this folder**: bullet list
+6. **Try it yourself**: copy-paste commands
+7. **The fix in one sentence**: the takeaway
+8. **Watch the lesson**: link to the article
 
 ## Code style
 
@@ -38,4 +38,4 @@ Each folder README has these sections, in order:
 
 - One test per failure mode the fix prevents.
 - Tests should fail against `broken.py` and pass against `fixed.py`.
-- Mock the model call where possible — students shouldn't need to spend money to run tests.
+- Mock the model call where possible: students shouldn't need to spend money to run tests.
