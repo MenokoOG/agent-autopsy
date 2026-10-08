@@ -1,0 +1,16 @@
+- key: LOOP
+  code: L/C
+  name: Loop and control
+  tone: pink
+- key: TOOLS
+  code: T/I
+  name: Tools and integration
+  tone: cyan
+- key: STATE
+  code: S/M
+  name: State and memory
+  tone: blue
+- key: TRUST
+  code: T/S
+  name: Trust and safety
+  tone: gold
