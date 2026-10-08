@@ -5,7 +5,7 @@ permalink: /field-checklist/
 
 # The field checklist
 
-Thirteen failures, one page. Use it in code review for any agent that touches real users, real money or real data. Each question maps to a lesson, so when an answer is "I don't know," you know which article to reopen.
+Fourteen failures, one page. Use it in code review for any agent that touches real users, real money or real data. Each question maps to a lesson, so when an answer is "I don't know," you know which article to reopen.
 
 ## Loop and control
 
@@ -31,8 +31,9 @@ Thirteen failures, one page. Use it in code review for any agent that touches re
 - **What does the agent do when it has no evidence?** If the answer relies on the prompt asking nicely, see [failure 11]({{ '/failures/11-confident-liar/' | relative_url }}).
 - **Which actions can't be undone, and who approves them?** If the set is empty because nobody listed it, see [failure 12]({{ '/failures/12-no-human-brake/' | relative_url }}).
 - **Is the agent's stated plan compared with its actual call in code?** If a person reads the explanation and the executor ignores it, see [failure 13]({{ '/failures/13-reasoning-action-mismatch/' | relative_url }}).
+- **What evidence does the checker produce on its own?** If it reads the worker's report, or can approve a task type it has no check for, see [failure 14]({{ '/failures/14-rubber-stamp-verifier/' | relative_url }}).
 
-## Three questions that cut across all thirteen
+## Three questions that cut across all fourteen
 
 1. **What does the failure look like in the logs?** Several of these cases produce a clean exit code and a fluent answer. If your monitoring only watches for crashes, it will miss them. Log why the agent stopped, what each tool returned and whether the answer was grounded.
 2. **Where does a limit live: in the prompt or in the code?** A prompt is a request. Code is a guarantee. Anything you can't afford to see fail sometimes belongs in code.
@@ -46,4 +47,4 @@ Thanks for reading. The code is at [github.com/MenokoOG/agent-autopsy](https://g
 
 ---
 
-[&larr; Previous: Failure 13]({{ '/failures/13-reasoning-action-mismatch/' | relative_url }}) · [All failures]({{ '/' | relative_url }})
+[&larr; Previous: Failure 14]({{ '/failures/14-rubber-stamp-verifier/' | relative_url }}) · [All failures]({{ '/' | relative_url }})
