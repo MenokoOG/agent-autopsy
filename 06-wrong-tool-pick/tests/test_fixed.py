@@ -41,3 +41,19 @@ def test_broken_searches_for_math_and_gets_it_wrong():
     result = broken.run_agent("What is 12.5% of 3,847?", model=echo_model)
     assert result["tool"] == "web_search"
     assert "480.875" not in result["answer"]  # stale forum answer, not math
+
+
+def test_calculator_does_arithmetic():
+    fixed = load("fixed")
+    assert float(fixed.calculator("240 * 12 + 7")) == 2887.0
+    assert float(fixed.calculator("-(3 + 4) % 5")) == 3.0
+
+
+def test_calculator_rejects_code():
+    fixed = load("fixed")
+    for bad in ["__import__('os').getcwd()", "(1).__class__", "2 ** 99999999", "abs(-1)"]:
+        try:
+            fixed.calculator(bad)
+        except (ValueError, SyntaxError):
+            continue
+        raise AssertionError(f"accepted: {bad}")

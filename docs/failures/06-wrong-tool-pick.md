@@ -101,7 +101,7 @@ The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/b
 - **Regexes cover the cases you thought of.** "A 12.5 percent share of 3,847" doesn't match. "Twelve and a half percent of 3847" doesn't either. A rules-first router is a floor, and its coverage grows only as you add patterns and test them.
 - **Model-based routing is still needed for ambiguous tasks.** The repo's note says it directly: deterministic first, model fallback second. When you do let a model choose, give it a description of what each tool is for and when not to use it, and check the choice against the task type.
 - **The tool's output still needs checking.** Picking the right tool doesn't remove the need for the boundary check from failure 5.
-- **The calculator uses `eval`.** It runs with empty builtins in this demo, which is not a safe sandbox for untrusted input. Replace it with a real expression parser before you reuse the idea.
+- **The calculator is minimal.** It parses expressions with the `ast` module and allows only numbers and `+ - * / %`, so it can't run code. It has no functions, no powers and no variables. Extend the whitelist deliberately if you need more.
 
 ## The takeaway
 
