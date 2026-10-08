@@ -1,0 +1,87 @@
+# One source for the home index, article headers and prev/next links.
+# Add a case here when you add its folder and article.
+- num: "01"
+  slug: "01-runaway-loop"
+  title: "The runaway loop"
+  short: "the agent is the only thing deciding when to stop."
+  cat: LOOP
+- num: "02"
+  slug: "02-stuck-agent"
+  title: "The stuck agent"
+  short: "the work is done and the done-check can't see it."
+  cat: LOOP
+- num: "03"
+  slug: "03-confidence-collapse"
+  title: "Confidence collapse"
+  short: "\"are you sure?\" on repeat flips a right answer."
+  cat: LOOP
+- num: "04"
+  slug: "04-tool-hallucination"
+  title: "Tool hallucination"
+  short: "the model requests a tool nobody built."
+  cat: TOOLS
+- num: "05"
+  slug: "05-silent-tool-failure"
+  title: "Silent tool failure"
+  short: "a 500 page gets summarized as data."
+  cat: TOOLS
+- num: "06"
+  slug: "06-wrong-tool-pick"
+  title: "Wrong tool pick"
+  short: "arithmetic goes to web search."
+  cat: TOOLS
+- num: "07"
+  slug: "07-context-collapse"
+  title: "Context collapse"
+  short: "trimming throws away the goal."
+  cat: STATE
+- num: "08"
+  slug: "08-state-drift"
+  title: "State drift"
+  short: "1200 plus 50 becomes 120050."
+  cat: STATE
+- num: "09"
+  slug: "09-amnesia-bug"
+  title: "The amnesia bug"
+  short: "a retry repeats finished work."
+  cat: STATE
+- num: "10"
+  slug: "10-prompt-injection"
+  title: "Prompt injection via tool output"
+  short: "a web page gives the agent orders."
+  cat: TRUST
+- num: "11"
+  slug: "11-confident-liar"
+  title: "The confident liar"
+  short: "no evidence, specific numbers anyway."
+  cat: TRUST
+- num: "12"
+  slug: "12-no-human-brake"
+  title: "No human brake"
+  short: "an irreversible action runs unattended."
+  cat: TRUST
+- num: "13"
+  slug: "13-reasoning-action-mismatch"
+  title: "Reasoning-action mismatch"
+  short: "the agent says A100 and pays out on A101."
+  cat: TRUST
+- num: "14"
+  slug: "14-rubber-stamp-verifier"
+  title: "Rubber-stamp verifier"
+  short: "the checker approves because the worker said \"verified.\""
+  cat: TRUST
+- num: "15"
+  slug: "15-memory-poisoning"
+  title: "Memory poisoning"
+  short: "an email plants a fact that gets paid out a session later."
+  cat: STATE
+- num: "16"
+  slug: "16-silent-degradation"
+  title: "Silent degradation"
+  short: "accuracy stays at 98% while every fraud case slips through."
+  cat: STATE
+- num: "17"
+  slug: "17-limit-in-the-prompt"
+  title: "Limit in the prompt"
+  short: "the $50 cap is a sentence, and the agent pays $120."
+  cat: TRUST

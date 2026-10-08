@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<div class="wrap pg">
+  <header class="pg-head rise">
+    {%- if page.eyebrow -%}<div class="eyebrow">{{ page.eyebrow }}</div>{%- endif -%}
+    <h1 class="pg-h1">{{ page.title }}</h1>
+  </header>
+  {%- if page.progress -%}
+  <div class="progress" id="progress" hidden>
+    <div class="progress-top"><span>REVIEWED</span><span id="progress-n">0 / 0</span></div>
+    <div class="bar"><div class="bar-fill" id="progress-fill"></div></div>
+    <button type="button" class="reset" id="progress-reset">RESET</button>
+  </div>
+  {%- endif -%}
+  <div class="prose pg-prose" id="prose">
+    {{ content }}
+  </div>
+</div>
