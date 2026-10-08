@@ -5,7 +5,7 @@ layout: default
 
 # The Agent Autopsy
 
-**16 ways AI agents fail in production. Each one runnable. Each one fixed.**
+**17 ways AI agents fail in production. Each one runnable. Each one fixed.**
 
 By Lawrence Jefferson II (Menoko OG). The code lives in the [agent-autopsy repo](https://github.com/MenokoOG/agent-autopsy). Every article walks through one folder: the broken agent, the fix, and the test that proves the fix holds.
 
@@ -38,7 +38,8 @@ New here? Read [Start here]({{ '/start-here/' | relative_url }}) first. It takes
 14. [Rubber-stamp verifier]({{ '/failures/14-rubber-stamp-verifier/' | relative_url }}): the checker approves because the worker said "verified."
 15. [Memory poisoning]({{ '/failures/15-memory-poisoning/' | relative_url }}): an email plants a fact that gets paid out a session later.
 16. [Silent degradation]({{ '/failures/16-silent-degradation/' | relative_url }}): accuracy stays at 98% while every fraud case slips through.
+17. [Limit in the prompt]({{ '/failures/17-limit-in-the-prompt/' | relative_url }}): the $50 cap is a sentence, and the agent pays $120.
 
 ## Wrap-up
 
-- [The field checklist]({{ '/field-checklist/' | relative_url }}): one page that turns all sixteen lessons into review questions.
+- [The field checklist]({{ '/field-checklist/' | relative_url }}): one page that turns all seventeen lessons into review questions.

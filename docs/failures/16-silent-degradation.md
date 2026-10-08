@@ -120,4 +120,4 @@ Monitor the metric that matches the harm, give it a threshold, and name who acts
 
 ---
 
-[&larr; Previous: Failure 15]({{ '/failures/15-memory-poisoning/' | relative_url }}) · [Next: The field checklist &rarr;]({{ '/field-checklist/' | relative_url }}) · [All failures]({{ '/' | relative_url }})
+[&larr; Previous: Failure 15]({{ '/failures/15-memory-poisoning/' | relative_url }}) · [Next: Failure 17 &rarr;]({{ '/failures/17-limit-in-the-prompt/' | relative_url }}) · [All failures]({{ '/' | relative_url }})
