@@ -1,4 +1,4 @@
-"""Failure #12 — tests."""
+"""Failure #12: tests."""
 import importlib.util
 from pathlib import Path
 
@@ -59,7 +59,7 @@ def test_fixed_audits_every_decision():
     fixed = load("fixed")
     outcome = fixed.run_agent(PLAN, db=fresh_db())
     assert [a["status"] for a in outcome["audit"]] == \
-        ["auto (reversible)", "BLOCKED — needs human"]
+        ["auto (reversible)", "BLOCKED, needs human"]
 
 
 def test_broken_destroys_data_unprompted():

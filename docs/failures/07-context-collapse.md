@@ -26,14 +26,14 @@ KEEP_LAST = 6  # naive context cap
 
 def build_context(history, keep_last=KEEP_LAST):
     # THE BUG: "keep the last N" treats the goal like any other message.
-    # Message 0 — the mission — is the first thing trimmed.
+    # Message 0, the mission, is the first thing trimmed.
     return history[-keep_last:]
 ```
 
 Each loop iteration appends a progress note that includes the aside "auth service logs look noisy btw", then calls the model on `build_context(history)`. After a few iterations, the window slides past the goal. The mock model behaves the way a real one has to: it can only act on what's in front of it.
 
 ```text
-final reply: Recent messages mention the auth service — refactoring auth next!
+final reply: Recent messages mention the auth service, refactoring auth next!
 goal still in context: False
 ```
 
@@ -57,7 +57,7 @@ def build_context(history, keep_last=KEEP_LAST):
     dropped = len(history) - 1 - keep_last
     summary = {"role": "user",
                "content": f"[context note: {dropped} earlier progress messages "
-                          "summarized away — no decisions were made in them]"}
+                          "summarized away, no decisions were made in them]"}
     return [goal, summary] + history[-keep_last:]
 ```
 

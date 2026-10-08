@@ -1,4 +1,4 @@
-"""Failure #10 — tests."""
+"""Failure #10: tests."""
 import importlib.util
 from pathlib import Path
 
@@ -39,7 +39,7 @@ def test_fixed_egress_scan_passes_clean_output():
 
 
 def test_broken_leaks_secret_to_injected_page():
-    """Broken agent pastes attacker text into the prompt — and obeys it."""
+    """Broken agent pastes attacker text into the prompt, and obeys it."""
     broken = load("broken")
     result = broken.run_agent("summarize", model=broken.mock_model)
     assert broken.SECRET in result["answer"]  # the key walks out the door

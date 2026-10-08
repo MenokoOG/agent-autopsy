@@ -1,15 +1,15 @@
-"""Failure #2 — The Stuck Agent (BROKEN).
+"""Failure #2: The Stuck Agent (BROKEN).
 
 The agent finished the work on step one. It just can't recognize it.
 A brittle done-check keeps it "verifying" until the step cap burns out,
-and it returns nothing — with the answer sitting right there in the log.
+and it returns nothing, with the answer sitting right there in the log.
 
 Run: python broken.py   (mock model unless ANTHROPIC_API_KEY is set)
 """
 import os
 
 TASK = "What is the capital of France? Reply TASK_COMPLETE when done."
-MAX_STEPS = 20  # a cap exists (lesson #1 learned) — but the done-check is broken
+MAX_STEPS = 20  # a cap exists (lesson #1 learned), but the done-check is broken
 
 
 def real_model(messages):
@@ -21,7 +21,7 @@ def real_model(messages):
 
 
 def mock_model(messages):
-    # The model answers correctly and clearly says it's finished —
+    # The model answers correctly and clearly says it's finished,
     # in natural language, like models do.
     return "The task is complete. The capital of France is Paris."
 

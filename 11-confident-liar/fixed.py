@@ -1,8 +1,8 @@
-"""Failure #11 — The Confident Liar (FIXED).
+"""Failure #11: The Confident Liar (FIXED).
 
 Grounding is enforced in code, not requested in the prompt. Every factual
 claim must cite an evidence ID from actual tool results. No evidence?
-The only legal answer is "I don't know" — and the code guarantees it.
+The only legal answer is "I don't know", and the code guarantees it.
 
 Run: python fixed.py   (mock model unless ANTHROPIC_API_KEY is set)
 """
@@ -37,7 +37,7 @@ NO_DATA_ANSWER = ("I could not verify this. My search returned no results for "
 
 
 def contains_specific_claims(answer):
-    # Numbers, dollar amounts, percentages — the things liars are made of.
+    # Numbers, dollar amounts, percentages, the things liars are made of.
     return bool(re.search(r"[\$€£]?\d[\d,.]*\s*(billion|million|%|percent)?",
                           answer, re.IGNORECASE))
 
@@ -46,7 +46,7 @@ def run_agent(task, model=MODEL, search_tool=search):
     evidence = search_tool(task)
 
     # THE FIX (gate 1): no evidence, no factual answer. Don't even ask the
-    # model — an honest "I don't know" is computed, not generated.
+    # model, an honest "I don't know" is computed, not generated.
     if not evidence:
         return {"answer": NO_DATA_ANSWER, "evidence": [], "grounded": False}
 

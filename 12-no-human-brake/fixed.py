@@ -1,8 +1,8 @@
-"""Failure #12 — No Human Brake (FIXED).
+"""Failure #12: No Human Brake (FIXED).
 
 Actions are classified: reversible ones run, irreversible ones STOP and
-wait for a human. The agent prepares everything — what, why, what it will
-destroy — and a person makes the call. LAHA: humans keep final authority.
+wait for a human. The agent prepares everything, what, why, what it will
+destroy, and a person makes the call. LAHA: humans keep final authority.
 
 Run: python fixed.py
 """
@@ -42,7 +42,7 @@ def run_agent(plan, db=DATABASE, approve=None):
             request = {"action": action, "arg": arg,
                        "impact": f"would affect: {db['customers']}"}
             if approve is None or not approve(request):
-                audit.append({"action": action, "status": "BLOCKED — needs human"})
+                audit.append({"action": action, "status": "BLOCKED, needs human"})
                 results.append(f"HELD FOR APPROVAL: {action}({arg!r})")
                 continue
             audit.append({"action": action, "status": "approved by human"})
@@ -56,13 +56,13 @@ if __name__ == "__main__":
     plan = [("archive_report", "q3-sales"),
             ("delete_customer_records", "records look stale")]
 
-    print("run 1 — no approver wired in:")
+    print("run 1, no approver wired in:")
     outcome = run_agent(plan)
     for line in outcome["results"]:
         print(f"  {line}")
     print(f"  customers table intact: {DATABASE['customers']}\n")
 
-    print("run 2 — human explicitly approves:")
+    print("run 2, human explicitly approves:")
     outcome = run_agent(plan, approve=lambda req: True)
     for line in outcome["results"]:
         print(f"  {line}")

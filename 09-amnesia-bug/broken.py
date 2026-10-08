@@ -1,8 +1,8 @@
-"""Failure #9 — The Amnesia Bug (BROKEN).
+"""Failure #9: The Amnesia Bug (BROKEN).
 
 The agent processes a work queue, crashes at item 3, and gets restarted
 by the scheduler. It remembers nothing. Items 1 and 2 get processed again
-— and "processed" means real emails to real customers, twice.
+and "processed" means real emails to real customers, twice.
 
 Run: python broken.py
 """

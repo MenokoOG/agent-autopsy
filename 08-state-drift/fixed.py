@@ -1,7 +1,7 @@
-"""Failure #8 — State Drift (FIXED).
+"""Failure #8: State Drift (FIXED).
 
 A schema guards the state between every step. Each step works on a copy,
-and its output is validated before the pipeline moves on — so the step
+and its output is validated before the pipeline moves on, so the step
 that corrupts state is the step that gets named in the stack trace.
 
 Run: python fixed.py
@@ -32,7 +32,7 @@ def parse_order(state, order):
 
 
 def enrich_with_fees(state, order):
-    # Same API, same string — but now the boundary coerces it on arrival.
+    # Same API, same string, but now the boundary coerces it on arrival.
     state["fees"] = int(order["fee_api_response"])
     return state
 

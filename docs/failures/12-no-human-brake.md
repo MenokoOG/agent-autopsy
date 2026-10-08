@@ -71,7 +71,7 @@ def run_agent(plan, db=DATABASE, approve=None):
             request = {"action": action, "arg": arg,
                        "impact": f"would affect: {db['customers']}"}
             if approve is None or not approve(request):
-                audit.append({"action": action, "status": "BLOCKED — needs human"})
+                audit.append({"action": action, "status": "BLOCKED, needs human"})
                 results.append(f"HELD FOR APPROVAL: {action}({arg!r})")
                 continue
             audit.append({"action": action, "status": "approved by human"})
@@ -92,7 +92,7 @@ Three design choices carry the lesson.
 Run it. The first run has no approver:
 
 ```text
-run 1 — no approver wired in:
+run 1, no approver wired in:
   archived q3-sales
   HELD FOR APPROVAL: delete_customer_records('records look stale')
   customers table intact: ['ana', 'bo', 'cy']
@@ -101,7 +101,7 @@ run 1 — no approver wired in:
 The archive still ran. The deletion waited. In the second run, a stand-in approver says yes, and the deletion goes through with a record that a person allowed it:
 
 ```text
-run 2 — human explicitly approves:
+run 2, human explicitly approves:
   archived q3-sales
   deleted 3 customer records (records look stale)
   customers table: []

@@ -5,7 +5,7 @@ Read the series: [The Agent Autopsy](https://menokoog.github.io/agent-autopsy/)
 
 [![The Agent Autopsy site: a retro terminal replays the runaway loop from failure 1](docs/assets/img/screenshot.png)](https://menokoog.github.io/agent-autopsy/)
 
-This is the open-source companion repo for *The Agent Autopsy: 17 Production Disasters, Diagnosed* — a written lesson series by Lawrence Jefferson II (Menoko OG).
+This is the open-source companion repo for *The Agent Autopsy: 17 Production Disasters, Diagnosed*, a written lesson series by Lawrence Jefferson II (Menoko OG).
 
 Most agent courses teach you to build one. This one teaches you what breaks when you do.
 
@@ -13,12 +13,12 @@ Most agent courses teach you to build one. This one teaches you what breaks when
 
 ## Why this exists
 
-If you've shipped an AI agent to production, you already know: the demo works, the prod doesn't. The 17 folders in this repo are the failures we've actually seen — runaway loops that burn tokens overnight, tools that lie silently, agents that fabricate results when they should fail loud.
+If you've shipped an AI agent to production, you already know: the demo works, the prod doesn't. The 17 folders in this repo are the failures we've actually seen, runaway loops that burn tokens overnight, tools that lie silently, agents that fabricate results when they should fail loud.
 
 Every failure here has two files:
 
-- `broken.py` — the bug, runnable, fails the way it does in real systems
-- `fixed.py` — the fix, with the lesson in the diff
+- `broken.py`: the bug, runnable, fails the way it does in real systems
+- `fixed.py`: the fix, with the lesson in the diff
 
 Read the broken code. Run it. Watch it fail. Then read the fix.
 
@@ -27,24 +27,24 @@ Read the broken code. Run it. Watch it fail. Then read the fix.
 ## The 17 Failures
 
 ### Loop & Control
-1. [Runaway Loop](./01-runaway-loop) — agent calls itself forever
-2. [Stuck Agent](./02-stuck-agent) — can't recognize it's done
-3. [Confidence Collapse](./03-confidence-collapse) — second-guesses every step
+1. [Runaway Loop](./01-runaway-loop): agent calls itself forever
+2. [Stuck Agent](./02-stuck-agent): can't recognize it's done
+3. [Confidence Collapse](./03-confidence-collapse): second-guesses every step
 
 ### Tool & Integration
-4. [Tool Hallucination](./04-tool-hallucination) — invents tools that don't exist
-5. [Silent Tool Failure](./05-silent-tool-failure) — treats errors as success
-6. [Wrong Tool Pick](./06-wrong-tool-pick) — search when it should calculate
+4. [Tool Hallucination](./04-tool-hallucination): invents tools that don't exist
+5. [Silent Tool Failure](./05-silent-tool-failure): treats errors as success
+6. [Wrong Tool Pick](./06-wrong-tool-pick): search when it should calculate
 
 ### State & Memory
-7. [Context Collapse](./07-context-collapse) — forgets the original goal
-8. [State Drift](./08-state-drift) — state quietly corrupts between steps
-9. [Amnesia Bug](./09-amnesia-bug) — re-does work it already finished
+7. [Context Collapse](./07-context-collapse): forgets the original goal
+8. [State Drift](./08-state-drift): state quietly corrupts between steps
+9. [Amnesia Bug](./09-amnesia-bug): re-does work it already finished
 
 ### Trust & Safety
-10. [Prompt Injection via Tool Output](./10-prompt-injection) — web page hijacks the agent
-11. [Confident Liar](./11-confident-liar) — fabricates results instead of failing
-12. [No Human Brake](./12-no-human-brake) — irreversible action, no checkpoint
+10. [Prompt Injection via Tool Output](./10-prompt-injection): web page hijacks the agent
+11. [Confident Liar](./11-confident-liar): fabricates results instead of failing
+12. [No Human Brake](./12-no-human-brake): irreversible action, no checkpoint
 13. [Reasoning-Action Mismatch](./13-reasoning-action-mismatch): says one thing, does another
 14. [Rubber-Stamp Verifier](./14-rubber-stamp-verifier): the checker believes the worker
 15. [Memory Poisoning](./15-memory-poisoning): a planted fact pays out later
@@ -84,7 +84,7 @@ Not for total beginners. If you've never written an API call, start elsewhere fi
 
 ## Philosophy
 
-This repo follows the LAHA principle — **Love All Humans Always**. Every failure mode here is also a human-impact failure: wasted money, broken trust, decisions taken without consent. Building agents that fail safely isn't an engineering nicety. It's an ethical baseline.
+This repo follows the LAHA principle, **Love All Humans Always**. Every failure mode here is also a human-impact failure: wasted money, broken trust, decisions taken without consent. Building agents that fail safely isn't an engineering nicety. It's an ethical baseline.
 
 Humans keep final authority over major decisions. Agents earn trust by being auditable, not by being autonomous.
 

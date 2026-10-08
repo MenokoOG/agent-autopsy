@@ -1,4 +1,4 @@
-"""Failure #9 — tests."""
+"""Failure #9: tests."""
 import importlib.util
 from collections import Counter
 from pathlib import Path
@@ -47,7 +47,7 @@ def test_fixed_rerun_after_success_does_nothing(tmp_path):
 
 
 def test_broken_duplicates_side_effects_after_crash():
-    """Broken batch redoes finished work — customers get the email twice."""
+    """Broken batch redoes finished work, customers get the email twice."""
     broken = load("broken")
     outbox = []
     with pytest.raises(broken.TransientCrash):

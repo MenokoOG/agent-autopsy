@@ -1,6 +1,6 @@
-"""Failure #1 — The Runaway Loop (FIXED).
+"""Failure #1: The Runaway Loop (FIXED).
 
-Same agent — with three stop conditions the model cannot override:
+Same agent, with three stop conditions the model cannot override:
 an iteration cap, a token budget, and a wall-clock timeout.
 
 Run: python fixed.py   (safe: mock model unless ANTHROPIC_API_KEY is set)
@@ -36,7 +36,7 @@ def run_agent(task, model=MODEL, max_steps=MAX_STEPS,
     messages = [{"role": "user", "content": task}]
     tokens_burned = 0
     started = time.monotonic()
-    log = []  # every step logged — you can see what it was thinking when cut off
+    log = []  # every step logged, you can see what it was thinking when cut off
 
     # THE FIX: stop conditions live OUTSIDE the model's judgment.
     for step in range(1, max_steps + 1):

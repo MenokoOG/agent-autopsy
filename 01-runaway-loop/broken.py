@@ -1,7 +1,7 @@
-"""Failure #1 — The Runaway Loop (BROKEN).
+"""Failure #1: The Runaway Loop (BROKEN).
 
 An agent loop with no external stop condition. The model is the only thing
-deciding when to stop — and one day it never does.
+deciding when to stop, and one day it never does.
 
 Run: python broken.py
 Uses a mock model unless ANTHROPIC_API_KEY is set. In mock mode this costs
@@ -35,7 +35,7 @@ def run_agent(task, model=MODEL):
     tokens_burned = 0
 
     # THE BUG: `while True` with the model as the only exit. No iteration cap,
-    # no token budget, no timeout. The agent decides when it's done — forever.
+    # no token budget, no timeout. The agent decides when it's done, forever.
     while True:
         reply = model(messages)
         tokens_burned += len(reply.split()) * 2  # rough cost proxy

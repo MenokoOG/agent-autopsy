@@ -1,6 +1,6 @@
-"""Failure #3 — Confidence Collapse (BROKEN).
+"""Failure #3: Confidence Collapse (BROKEN).
 
-The agent gets the right answer, then asks itself "are you sure?" — forever.
+The agent gets the right answer, then asks itself "are you sure?", forever.
 Each re-check flips the answer. It oscillates until the cap trips, burns 20x
 the tokens the task needed, and returns whichever answer the parity landed on.
 
@@ -35,7 +35,7 @@ def run_agent(task, model=MODEL, max_steps=MAX_STEPS):
     answer = None
 
     # THE BUG: unbounded self-verification. Every answer triggers another
-    # "are you sure?" — and nothing ever counts as verified.
+    # "are you sure?", and nothing ever counts as verified.
     for step in range(1, max_steps + 1):
         reply = model(messages)
         print(f"step={step}  {reply[:60]}")

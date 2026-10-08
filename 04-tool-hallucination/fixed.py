@@ -1,7 +1,7 @@
-"""Failure #4 — Tool Hallucination (FIXED).
+"""Failure #4: Tool Hallucination (FIXED).
 
 Every tool request is validated against the registry. Unknown tool? The
-agent tells the model what actually exists and lets it retry — bounded at
+agent tells the model what actually exists and lets it retry, bounded at
 three attempts, logged, and failing loud instead of crashing blind.
 
 Run: python fixed.py   (mock model unless ANTHROPIC_API_KEY is set)
@@ -82,7 +82,7 @@ def run_agent(task, model=MODEL, tools=TOOLS, max_retries=MAX_TOOL_RETRIES):
         attempts.append(name)
 
         # THE FIX: validate before executing. The registry is the source of
-        # truth — the model's imagination is not.
+        # truth, the model's imagination is not.
         if name not in tools:
             messages.append({"role": "assistant", "content": json.dumps(request)})
             messages.append({"role": "user", "content":
