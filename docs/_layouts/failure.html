@@ -1,0 +1,54 @@
+---
+layout: default
+---
+{%- assign fails = site.data.failures -%}
+{%- assign total = fails | size -%}
+{%- assign me = nil -%}
+{%- assign prev = nil -%}
+{%- assign next = nil -%}
+{%- for f in fails -%}
+  {%- assign here = page.url | remove: '/failures/' | remove: '/' -%}
+  {%- if f.slug == here -%}
+    {%- assign me = f -%}
+    {%- assign pi = forloop.index0 | minus: 1 -%}{%- unless forloop.first -%}{%- assign prev = fails[pi] -%}{%- endunless -%}
+    {%- assign ni = forloop.index0 | plus: 1 -%}{%- unless forloop.last -%}{%- assign next = fails[ni] -%}{%- endunless -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign cat = site.data.categories | where: "key", me.cat | first -%}
+{%- assign tagparts = content | split: '<em>' -%}
+{%- assign tagline = tagparts[1] | split: '</em>' | first -%}
+{%- assign heading = page.title | split: ': ' | last -%}
+<div class="wrap art">
+  <header class="art-head rise tone-{{ cat.tone }}">
+    <div class="art-meta"><span class="art-num">FAILURE {{ me.num }} / {{ total }}</span><span>·</span><span>{{ cat.name | upcase }}</span></div>
+    <h1 class="art-h1 glitch"><span>{{ heading }}</span><span class="g g1" aria-hidden="true">{{ heading }}</span></h1>
+    <p class="art-tag">{{ tagline }}</p>
+    <div class="chips">
+      <a href="{{ site.data.site.repo }}/blob/main/{{ me.slug }}/broken.py" target="_blank" rel="noopener">broken.py ↗</a>
+      <a href="{{ site.data.site.repo }}/blob/main/{{ me.slug }}/fixed.py" target="_blank" rel="noopener">fixed.py ↗</a>
+      <a href="{{ site.data.site.repo }}/blob/main/{{ me.slug }}/tests/test_fixed.py" target="_blank" rel="noopener">tests/test_fixed.py ↗</a>
+      <a href="{{ site.data.site.repo }}/blob/main/{{ me.slug }}/README.md" target="_blank" rel="noopener">README.md ↗</a>
+    </div>
+  </header>
+
+  <div class="art-grid">
+    <aside class="toc" id="toc" aria-label="On this page"></aside>
+    <article class="art-body">
+      <div class="prose" id="prose">
+        {{ content }}
+      </div>
+      <nav class="pn" aria-label="Previous and next failure">
+        {%- if prev -%}
+        <a class="pn-card" href="{{ '/failures/' | append: prev.slug | append: '/' | relative_url }}"><span class="pn-k">← PREVIOUS</span><span>Failure {{ prev.num }}: {{ prev.title }}</span></a>
+        {%- else -%}
+        <a class="pn-card" href="{{ '/start-here/' | relative_url }}"><span class="pn-k">← PREVIOUS</span><span>Start here</span></a>
+        {%- endif -%}
+        {%- if next -%}
+        <a class="pn-card next" href="{{ '/failures/' | append: next.slug | append: '/' | relative_url }}"><span class="pn-k">NEXT →</span><span>Failure {{ next.num }}: {{ next.title }}</span></a>
+        {%- else -%}
+        <a class="pn-card next" href="{{ '/field-checklist/' | relative_url }}"><span class="pn-k">NEXT →</span><span>The field checklist</span></a>
+        {%- endif -%}
+      </nav>
+    </article>
+  </div>
+</div>

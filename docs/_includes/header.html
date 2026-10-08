@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>AGENT_AUTOPSY<span class="brand-sl">//</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="{{ '/#failures' | relative_url }}"{% if page.layout == 'home' %} class="on" aria-current="page"{% endif %}>Failures</a>
+      <a href="{{ '/start-here/' | relative_url }}"{% if page.url == '/start-here/' %} class="on" aria-current="page"{% endif %}>Start here</a>
+      {%- if page.layout == 'failure' -%}
+      <a href="{{ page.url | relative_url }}" class="on" aria-current="page">Article</a>
+      {%- endif -%}
+      <a href="{{ '/field-checklist/' | relative_url }}"{% if page.url == '/field-checklist/' %} class="on" aria-current="page"{% endif %}>Checklist</a>
+      <button type="button" class="fx-toggle" id="fx-toggle" aria-pressed="true" title="Toggle scanlines, glitch and motion">FX ON</button>
+      <a class="ghost-link" href="{{ site.data.site.repo }}" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </div>
+</header>

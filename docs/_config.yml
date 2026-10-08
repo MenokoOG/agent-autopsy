@@ -3,13 +3,32 @@ description: 17 ways AI agents fail in production, diagnosed with runnable code 
 author: Lawrence Jefferson II (Menoko OG)
 url: https://menokoog.github.io
 baseurl: /agent-autopsy
-theme: jekyll-theme-minimal
 markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-show_downloads: false
 repository: MenokoOG/agent-autopsy
+sass:
+  style: compressed
+defaults:
+  - scope:
+      path: "failures"
+    values:
+      layout: failure
+      body_class: page-article
+  - scope:
+      path: "start-here.md"
+    values:
+      layout: page
+      eyebrow: "// BOOT SEQUENCE"
+      body_class: page-start
+  - scope:
+      path: "field-checklist.md"
+    values:
+      layout: page
+      eyebrow: "// CODE REVIEW"
+      body_class: page-checklist
+      progress: true
 exclude:
   - STRUCTURE.md
   - adr

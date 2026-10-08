@@ -1,0 +1,23 @@
+<div class="term" id="term" data-folder="01-runaway-loop">
+  <div class="term-bar">
+    <div class="term-title">TTY0 · <span>01-runaway-loop</span></div>
+    <div class="term-tabs" role="tablist" aria-label="Which version to run">
+      <button type="button" role="tab" id="tab-broken" data-mode="broken" aria-selected="true">BROKEN.PY</button>
+      <button type="button" role="tab" id="tab-fixed" data-mode="fixed" aria-selected="false">FIXED.PY</button>
+    </div>
+  </div>
+  <div class="term-out" id="term-out">
+    <div class="term-cmd" id="term-cmd">$ python broken.py</div>
+    <div id="term-lines"></div>
+    <div class="term-cursor" aria-hidden="true"><span>█</span></div>
+  </div>
+  <div class="term-foot">
+    <div class="meters" id="term-meters"></div>
+    <div class="term-actions">
+      <button type="button" class="btn btn-sm" id="term-run">▶ RUN</button>
+      <button type="button" class="btn-kill" id="term-kill" disabled>CTRL+C</button>
+      <span class="term-status" id="term-status" aria-live="polite">IDLE</span>
+    </div>
+  </div>
+</div>
+<p class="term-cap">Mock model. Output matches the repo's broken.py / fixed.py.</p>
