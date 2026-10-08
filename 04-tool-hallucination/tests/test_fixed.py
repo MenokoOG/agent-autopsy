@@ -54,3 +54,19 @@ def test_broken_crashes_on_hallucinated_tool():
     broken = load("broken")
     with pytest.raises(KeyError):
         broken.run_agent("task", model=always_hallucinate)
+
+
+def test_calculator_does_arithmetic():
+    fixed = load("fixed")
+    assert float(fixed.calculator("240 * 12 + 7")) == 2887.0
+    assert float(fixed.calculator("-(3 + 4) % 5")) == 3.0
+
+
+def test_calculator_rejects_code():
+    fixed = load("fixed")
+    for bad in ["__import__('os').getcwd()", "(1).__class__", "2 ** 99999999", "abs(-1)"]:
+        try:
+            fixed.calculator(bad)
+        except (ValueError, SyntaxError):
+            continue
+        raise AssertionError(f"accepted: {bad}")
