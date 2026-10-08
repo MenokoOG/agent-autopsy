@@ -5,7 +5,7 @@ permalink: /field-checklist/
 
 # The field checklist
 
-Sixteen failures, one page. Use it in code review for any agent that touches real users, real money or real data. Each question maps to a lesson, so when an answer is "I don't know," you know which article to reopen.
+Seventeen failures, one page. Use it in code review for any agent that touches real users, real money or real data. Each question maps to a lesson, so when an answer is "I don't know," you know which article to reopen.
 
 ## Loop and control
 
@@ -34,8 +34,9 @@ Sixteen failures, one page. Use it in code review for any agent that touches rea
 - **What evidence does the checker produce on its own?** If it reads the worker's report, or can approve a task type it has no check for, see [failure 14]({{ '/failures/14-rubber-stamp-verifier/' | relative_url }}).
 - **Who can write to long-term memory, and is the source recorded?** If anything the agent reads can save a fact, see [failure 15]({{ '/failures/15-memory-poisoning/' | relative_url }}).
 - **Which metric measures the harm you can't afford, and who acts when it breaches?** If the dashboard shows overall accuracy and no owner, see [failure 16]({{ '/failures/16-silent-degradation/' | relative_url }}).
+- **Which rules exist only in the prompt?** Any limit that would cost you money or data if the model ignored it belongs in the tool. See [failure 17]({{ '/failures/17-limit-in-the-prompt/' | relative_url }}).
 
-## Three questions that cut across all sixteen
+## Three questions that cut across all seventeen
 
 1. **What does the failure look like in the logs?** Several of these cases produce a clean exit code and a fluent answer. If your monitoring only watches for crashes, it will miss them. Log why the agent stopped, what each tool returned and whether the answer was grounded.
 2. **Where does a limit live: in the prompt or in the code?** A prompt is a request. Code is a guarantee. Anything you can't afford to see fail sometimes belongs in code.
@@ -49,4 +50,4 @@ Thanks for reading. The code is at [github.com/MenokoOG/agent-autopsy](https://g
 
 ---
 
-[&larr; Previous: Failure 16]({{ '/failures/16-silent-degradation/' | relative_url }}) · [All failures]({{ '/' | relative_url }})
+[&larr; Previous: Failure 17]({{ '/failures/17-limit-in-the-prompt/' | relative_url }}) · [All failures]({{ '/' | relative_url }})

@@ -1,9 +1,9 @@
 # Agent Autopsy
 
-**16 ways AI agents fail in production. Each one runnable. Each one fixed.**
+**17 ways AI agents fail in production. Each one runnable. Each one fixed.**
 Read the series: [The Agent Autopsy](https://menokoog.github.io/agent-autopsy/)
 
-This is the open-source companion repo for *The Agent Autopsy: 16 Production Disasters, Diagnosed* — a written lesson series by Lawrence Jefferson II (Menoko OG).
+This is the open-source companion repo for *The Agent Autopsy: 17 Production Disasters, Diagnosed* — a written lesson series by Lawrence Jefferson II (Menoko OG).
 
 Most agent courses teach you to build one. This one teaches you what breaks when you do.
 
@@ -11,7 +11,7 @@ Most agent courses teach you to build one. This one teaches you what breaks when
 
 ## Why this exists
 
-If you've shipped an AI agent to production, you already know: the demo works, the prod doesn't. The 16 folders in this repo are the failures we've actually seen — runaway loops that burn tokens overnight, tools that lie silently, agents that fabricate results when they should fail loud.
+If you've shipped an AI agent to production, you already know: the demo works, the prod doesn't. The 17 folders in this repo are the failures we've actually seen — runaway loops that burn tokens overnight, tools that lie silently, agents that fabricate results when they should fail loud.
 
 Every failure here has two files:
 
@@ -22,7 +22,7 @@ Read the broken code. Run it. Watch it fail. Then read the fix.
 
 ---
 
-## The 16 Failures
+## The 17 Failures
 
 ### Loop & Control
 1. [Runaway Loop](./01-runaway-loop) — agent calls itself forever
@@ -47,6 +47,7 @@ Read the broken code. Run it. Watch it fail. Then read the fix.
 14. [Rubber-Stamp Verifier](./14-rubber-stamp-verifier): the checker believes the worker
 15. [Memory Poisoning](./15-memory-poisoning): a planted fact pays out later
 16. [Silent Degradation](./16-silent-degradation): the metric stays green while the model fails
+17. [Limit in the Prompt](./17-limit-in-the-prompt): a cap that exists only as a sentence
 
 ---
 
