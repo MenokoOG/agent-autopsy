@@ -129,4 +129,4 @@ Memory is an input to every future decision, so decide at the write who may reme
 
 ---
 
-[&larr; Previous: Failure 14]({{ '/failures/14-rubber-stamp-verifier/' | relative_url }}) · [Next: The field checklist &rarr;]({{ '/field-checklist/' | relative_url }}) · [All failures]({{ '/' | relative_url }})
+[&larr; Previous: Failure 14]({{ '/failures/14-rubber-stamp-verifier/' | relative_url }}) · [Next: Failure 16 &rarr;]({{ '/failures/16-silent-degradation/' | relative_url }}) · [All failures]({{ '/' | relative_url }})

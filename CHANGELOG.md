@@ -10,6 +10,7 @@ Every PR includes its CHANGELOG entry in the diff.
 ## [Unreleased]
 
 ### Added
+- Failure 16, silent degradation: runnable `broken.py` and `fixed.py`, 6 tests and a written lesson
 - Failure 15, memory poisoning: runnable `broken.py` and `fixed.py`, 6 tests and a written lesson
 - Failure 14, rubber-stamp verifier: runnable `broken.py` and `fixed.py`, 6 tests and a written lesson
 - Failure 13, reasoning-action mismatch: runnable `broken.py` and `fixed.py`, 6 tests and a written lesson
