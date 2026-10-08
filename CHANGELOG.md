@@ -18,6 +18,7 @@ Every PR includes its CHANGELOG entry in the diff.
 - Written lesson series for all 12 failures, published with GitHub Pages from `docs/`
 
 ### Changed
+- Removed em dashes from READMEs, code comments, docstrings and lessons (no behavior change)
 - LICENSE copyright holder is now the handle M3n0ko0g
 - Replaced the `eval` calculator in cases 4 and 6 with an `ast`-based expression parser (numbers and `+ - * / %` only), with tests that reject code
 - Flattened the repo: the project now lives at the repository root instead of a nested `agent-autopsy/` folder
