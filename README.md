@@ -1,9 +1,9 @@
 # Agent Autopsy
 
-**12 ways AI agents fail in production. Each one runnable. Each one fixed.**
+**13 ways AI agents fail in production. Each one runnable. Each one fixed.**
 Read the series: [The Agent Autopsy](https://menokoog.github.io/agent-autopsy/)
 
-This is the open-source companion repo for *The Agent Autopsy: 12 Production Disasters, Diagnosed* — a written lesson series by Lawrence Jefferson II (Menoko OG).
+This is the open-source companion repo for *The Agent Autopsy: 13 Production Disasters, Diagnosed* — a written lesson series by Lawrence Jefferson II (Menoko OG).
 
 Most agent courses teach you to build one. This one teaches you what breaks when you do.
 
@@ -11,7 +11,7 @@ Most agent courses teach you to build one. This one teaches you what breaks when
 
 ## Why this exists
 
-If you've shipped an AI agent to production, you already know: the demo works, the prod doesn't. The 12 folders in this repo are the failures we've actually seen — runaway loops that burn tokens overnight, tools that lie silently, agents that fabricate results when they should fail loud.
+If you've shipped an AI agent to production, you already know: the demo works, the prod doesn't. The 13 folders in this repo are the failures we've actually seen — runaway loops that burn tokens overnight, tools that lie silently, agents that fabricate results when they should fail loud.
 
 Every failure here has two files:
 
@@ -22,7 +22,7 @@ Read the broken code. Run it. Watch it fail. Then read the fix.
 
 ---
 
-## The 12 Failures
+## The 13 Failures
 
 ### Loop & Control
 1. [Runaway Loop](./01-runaway-loop) — agent calls itself forever
@@ -43,6 +43,7 @@ Read the broken code. Run it. Watch it fail. Then read the fix.
 10. [Prompt Injection via Tool Output](./10-prompt-injection) — web page hijacks the agent
 11. [Confident Liar](./11-confident-liar) — fabricates results instead of failing
 12. [No Human Brake](./12-no-human-brake) — irreversible action, no checkpoint
+13. [Reasoning-Action Mismatch](./13-reasoning-action-mismatch): says one thing, does another
 
 ---
 

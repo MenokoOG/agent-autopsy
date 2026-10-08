@@ -10,6 +10,7 @@ Every PR includes its CHANGELOG entry in the diff.
 ## [Unreleased]
 
 ### Added
+- Failure 13, reasoning-action mismatch: runnable `broken.py` and `fixed.py`, 6 tests and a written lesson
 - Written lesson series for all 12 failures, published with GitHub Pages from `docs/`
 
 ### Changed
