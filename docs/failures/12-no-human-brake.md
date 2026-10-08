@@ -134,4 +134,4 @@ Irreversible actions stop and wait for a human. No approver, no execution. This 
 
 ---
 
-[&larr; Previous: Failure 11]({{ '/failures/11-confident-liar/' | relative_url }}) · [Next: The field checklist &rarr;]({{ '/field-checklist/' | relative_url }}) · [All failures]({{ '/' | relative_url }})
+[&larr; Previous: Failure 11]({{ '/failures/11-confident-liar/' | relative_url }}) · [Next: Failure 13 &rarr;]({{ '/failures/13-reasoning-action-mismatch/' | relative_url }}) · [All failures]({{ '/' | relative_url }})
