@@ -115,4 +115,4 @@ A verifier earns its place by producing its own evidence from the original input
 
 ---
 
-[&larr; Previous: Failure 13]({{ '/failures/13-reasoning-action-mismatch/' | relative_url }}) · [Next: The field checklist &rarr;]({{ '/field-checklist/' | relative_url }}) · [All failures]({{ '/' | relative_url }})
+[&larr; Previous: Failure 13]({{ '/failures/13-reasoning-action-mismatch/' | relative_url }}) · [Next: Failure 15 &rarr;]({{ '/failures/15-memory-poisoning/' | relative_url }}) · [All failures]({{ '/' | relative_url }})
