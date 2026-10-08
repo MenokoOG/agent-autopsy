@@ -1,4 +1,4 @@
-"""Failure #4 — tests."""
+"""Failure #4: tests."""
 import importlib.util
 import json
 from pathlib import Path
@@ -50,7 +50,7 @@ def test_fixed_executes_valid_request_first_try():
 
 
 def test_broken_crashes_on_hallucinated_tool():
-    """Broken agent executes whatever name the model dreams up — KeyError."""
+    """Broken agent executes whatever name the model dreams up, KeyError."""
     broken = load("broken")
     with pytest.raises(KeyError):
         broken.run_agent("task", model=always_hallucinate)

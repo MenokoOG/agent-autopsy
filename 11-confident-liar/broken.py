@@ -1,7 +1,7 @@
-"""Failure #11 — The Confident Liar (BROKEN).
+"""Failure #11: The Confident Liar (BROKEN).
 
 The search tool comes back empty. The model, asked for revenue numbers it
-does not have, produces beautiful, specific, wrong ones — with a fake
+does not have, produces beautiful, specific, wrong ones, with a fake
 citation for garnish. The agent passes them straight to the user.
 
 Run: python broken.py   (mock model unless ANTHROPIC_API_KEY is set)
@@ -26,7 +26,7 @@ def real_model(prompt):
 
 def mock_model(prompt):
     # Models abhor a vacuum. Asked for a number with no data, this one
-    # invents a plausible one — the way real models do under pressure.
+    # invents a plausible one, the way real models do under pressure.
     return ("ACME Corp reported Q3 2025 revenue of $4.21 billion, up 12% "
             "year-over-year (source: ACME investor relations).")
 
@@ -38,7 +38,7 @@ def run_agent(task, model=MODEL, search_tool=search):
     evidence = search_tool(task)
 
     # THE BUG: the answer never has to point at evidence. Empty search
-    # results and a confident reply coexist just fine — and ship.
+    # results and a confident reply coexist just fine, and ship.
     prompt = f"{task}\n\nSearch results: {evidence}"
     return {"answer": model(prompt), "evidence": evidence}
 

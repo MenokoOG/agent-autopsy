@@ -1,4 +1,4 @@
-"""Failure #5 — Silent Tool Failure (BROKEN).
+"""Failure #5: Silent Tool Failure (BROKEN).
 
 The fetch tool returns an HTTP 500. The agent stuffs the error page into
 context like it's data, the model gamely summarizes garbage, and the user
@@ -27,7 +27,7 @@ def real_model(messages):
 
 
 def mock_model(messages):
-    # Models do their best with whatever you hand them — including garbage.
+    # Models do their best with whatever you hand them, including garbage.
     return ("Q3 sales look steady overall. The report highlights internal "
             "server performance as a key operational theme this quarter.")
 
@@ -43,7 +43,7 @@ def run_agent(task, model=MODEL, fetch=fetch_url):
     messages = [{"role": "user",
                  "content": f"{task}\n\nReport contents:\n{response['body']}"}]
     summary = model(messages)
-    return {"ok": True, "summary": summary}  # "ok" — nothing was ok
+    return {"ok": True, "summary": summary}  # "ok", nothing was ok
 
 
 if __name__ == "__main__":

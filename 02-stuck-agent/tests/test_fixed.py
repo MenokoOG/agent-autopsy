@@ -1,4 +1,4 @@
-"""Failure #2 — tests."""
+"""Failure #2: tests."""
 import importlib.util
 from pathlib import Path
 
@@ -36,7 +36,7 @@ def test_fixed_stall_detector_catches_repeats():
 
 def test_fixed_accepts_marker_variants():
     fixed = load("fixed")
-    for reply in ["TASK_COMPLETE", "status: complete — Paris", "Task complete!"]:
+    for reply in ["TASK_COMPLETE", "status: complete, Paris", "Task complete!"]:
         assert fixed.is_complete(reply), reply
 
 

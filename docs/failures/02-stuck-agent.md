@@ -19,7 +19,7 @@ From [`broken.py`](https://github.com/MenokoOG/agent-autopsy/blob/main/02-stuck-
 
 ```python
 TASK = "What is the capital of France? Reply TASK_COMPLETE when done."
-MAX_STEPS = 20  # a cap exists (lesson #1 learned) — but the done-check is broken
+MAX_STEPS = 20  # a cap exists (lesson #1 learned), but the done-check is broken
 
 ...
 

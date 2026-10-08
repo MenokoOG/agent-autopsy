@@ -1,4 +1,4 @@
-"""Failure #7 — tests."""
+"""Failure #7: tests."""
 import importlib.util
 from pathlib import Path
 
@@ -44,7 +44,7 @@ def test_fixed_agent_stays_on_mission():
 
 
 def test_broken_loses_the_goal():
-    """Broken trim drops message 0 — the mission — and the agent drifts."""
+    """Broken trim drops message 0, the mission, and the agent drifts."""
     broken = load("broken")
     context = broken.build_context(make_history(50), keep_last=6)
     assert not any("GOAL:" in m["content"] for m in context)

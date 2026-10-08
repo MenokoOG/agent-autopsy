@@ -83,7 +83,7 @@ prompt = (f"{task}\n\n"
 ```python
 def scan_output(answer):
     if re.search(r"sk-[\w-]+", answer):
-        raise SecurityError("model output contained a secret — blocked")
+        raise SecurityError("model output contained a secret, blocked")
     return answer
 ```
 

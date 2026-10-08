@@ -27,7 +27,7 @@ def run_agent(task, model=MODEL, search_tool=search):
     evidence = search_tool(task)
 
     # THE BUG: the answer never has to point at evidence. Empty search
-    # results and a confident reply coexist just fine — and ship.
+    # results and a confident reply coexist just fine, and ship.
     prompt = f"{task}\n\nSearch results: {evidence}"
     return {"answer": model(prompt), "evidence": evidence}
 ```

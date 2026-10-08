@@ -72,7 +72,7 @@ def run_batch(users, outbox, checkpoint=CHECKPOINT, crash_at=None):
     done = load_done(checkpoint)
     for index, user in enumerate(users):
         if user in done:
-            continue  # already completed on a previous run — skip
+            continue  # already completed on a previous run, skip
         if crash_at is not None and index == crash_at:
             raise TransientCrash(f"network blip at item {index}")
         send_welcome_email(user, outbox)

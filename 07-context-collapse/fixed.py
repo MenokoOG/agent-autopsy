@@ -1,8 +1,8 @@
-"""Failure #7 — Context Collapse (FIXED).
+"""Failure #7: Context Collapse (FIXED).
 
 The goal is pinned. Trimming happens in the middle of the conversation,
 never at the ends: goal stays, recent messages stay, the middle gets
-summarized into one marker line. The agent can lose detail — it can
+summarized into one marker line. The agent can lose detail, it can
 never lose the mission.
 
 Run: python fixed.py   (mock model unless ANTHROPIC_API_KEY is set)
@@ -26,7 +26,7 @@ def mock_model(messages):
     context = " ".join(m["content"] for m in messages)
     if "GOAL:" in context:
         return "Continuing the billing DB migration, step complete."
-    return "Recent messages mention the auth service — refactoring auth next!"
+    return "Recent messages mention the auth service, refactoring auth next!"
 
 
 MODEL = real_model if os.environ.get("ANTHROPIC_API_KEY") else mock_model
@@ -41,7 +41,7 @@ def build_context(history, keep_last=KEEP_LAST):
     dropped = len(history) - 1 - keep_last
     summary = {"role": "user",
                "content": f"[context note: {dropped} earlier progress messages "
-                          "summarized away — no decisions were made in them]"}
+                          "summarized away, no decisions were made in them]"}
     return [goal, summary] + history[-keep_last:]
 
 

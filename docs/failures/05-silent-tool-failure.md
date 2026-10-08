@@ -31,7 +31,7 @@ def run_agent(task, model=MODEL, fetch=fetch_url):
     messages = [{"role": "user",
                  "content": f"{task}\n\nReport contents:\n{response['body']}"}]
     summary = model(messages)
-    return {"ok": True, "summary": summary}  # "ok" — nothing was ok
+    return {"ok": True, "summary": summary}  # "ok", nothing was ok
 ```
 
 The function reads `response['body']` and never reads `response['status']`. It then returns `"ok": True` unconditionally. Here's the output:

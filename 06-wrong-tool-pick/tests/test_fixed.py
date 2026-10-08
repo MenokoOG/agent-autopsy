@@ -1,4 +1,4 @@
-"""Failure #6 — tests."""
+"""Failure #6: tests."""
 import importlib.util
 from pathlib import Path
 
@@ -36,7 +36,7 @@ def test_fixed_still_searches_for_facts():
 
 
 def test_broken_searches_for_math_and_gets_it_wrong():
-    """Broken agent asks the internet to do arithmetic. It obliges — wrongly."""
+    """Broken agent asks the internet to do arithmetic. It obliges, wrongly."""
     broken = load("broken")
     result = broken.run_agent("What is 12.5% of 3,847?", model=echo_model)
     assert result["tool"] == "web_search"
