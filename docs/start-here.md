@@ -56,7 +56,7 @@ Every article follows the same order, so you can skim a familiar shape:
 
 **The fixes are small on purpose.** They're teaching code. A production version of the stall detector or the egress scan needs more than twenty lines. The articles say where.
 
-**The calculator uses `eval`.** Cases 4 and 6 include a toy calculator built on `eval` with empty builtins. That's fine for a demo and unsafe for anything that sees untrusted input. Swap in a real expression parser before you borrow it.
+**The calculator is a toy.** Cases 4 and 6 include a small calculator that parses expressions with Python's `ast` module and allows only numbers and `+ - * / %`. It never calls `eval`. It's enough for the demos, and you should extend its whitelist deliberately if you borrow it.
 
 **Humans keep the final say.** The repo follows a principle I call LAHA, Love All Humans Always. In practice it means every failure here has a human cost: money wasted, trust broken, a decision made without consent. The last case in the series makes that a code path.
 

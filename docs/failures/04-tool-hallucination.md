@@ -107,7 +107,7 @@ The tests in [`tests/test_fixed.py`](https://github.com/MenokoOG/agent-autopsy/b
 - **`request["args"]` can be missing.** The code uses `request.get("tool")` for the name but indexes `request["args"]` directly. A malformed request that has a valid tool name and no `args` key raises a `KeyError`. Treat the whole request as untrusted input.
 - **`json.loads` can fail.** If the model returns prose instead of JSON, the parse raises before the validation runs. Production code catches that and feeds it back the same way.
 - **Native tool calling helps.** If your API supports structured tool calls with declared schemas, the provider constrains the tool name for you. You still validate on your side. Don't rely on the provider as the only check.
-- **The demo calculator uses `eval`.** Don't ship it. See the note on [the start page]({{ '/start-here/' | relative_url }}).
+- **The demo calculator is minimal.** It parses expressions with Python's `ast` module and allows only numbers and `+ - * / %`. It rejects everything else, including function calls and `**`. It's a teaching tool, not a math engine. See the note on [the start page]({{ '/start-here/' | relative_url }}).
 
 ## The takeaway
 
